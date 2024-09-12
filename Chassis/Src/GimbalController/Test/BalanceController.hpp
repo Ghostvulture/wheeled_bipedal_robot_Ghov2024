@@ -18,6 +18,7 @@
 #include "BalanceStateRelax.hpp"
 #include "BalanceRemoteControl.hpp"
 #include "BalanceStandControl.hpp"
+#include "odometer.hpp"
 
 /**
  * @struct USBSendPacket
@@ -115,7 +116,7 @@ public:
     /**
      * @brief 构造函数
      * 默认模式是放松模式。
-     * 将电机注册传入不同的状态机。
+     * 将电机实例传入不同的状态机。
      */
     BalanceController() : RelaxState(&LMotor,&RMotor),
                          RemoteControlState(&LMotor,&RMotor),

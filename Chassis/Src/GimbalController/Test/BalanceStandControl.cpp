@@ -4,32 +4,46 @@ void BalanceStandControl::init()
 {
     Motor_angleSet = 0;
     Motor_omegaSet = 0;
+    Motor_positionSet = 0;
 
-    /*---------------------------初始化PID---------------------------*/
-    LK9025AnglePid.kp = 20.0f;
+    /*---------------------------初始化直立环PID---------------------------*/
+    //角度环
+    LK9025AnglePid.kp = 60.0f;
     LK9025AnglePid.ki = 0.0f;
-    LK9025AnglePid.kd = 0.0f;
+    LK9025AnglePid.kd = 5.0f;
     LK9025AnglePid.maxIOut = 3;
     LK9025AnglePid.maxOut = 15000;
-
-    LK9025OmegaPid.kp = 20.0f;
+    //角速度环
+    LK9025OmegaPid.kp = 30.0f;
     LK9025OmegaPid.ki = 0.0f;
     LK9025OmegaPid.kd = 0.0f;
     LK9025OmegaPid.maxIOut = 3;
     LK9025OmegaPid.maxOut = 15000;
 
+    /*---------------------------初始化行进环PID---------------------------*/
+    //位移环
+    LK9025PositionPid.kp = 60.0f;
+    LK9025PositionPid.ki = 0.0f;
+    LK9025PositionPid.kd = 5.0f;
+    LK9025PositionPid.maxIOut = 3;
+    LK9025PositionPid.maxOut = 15000;
+
+
     /*-----------------------------------------左右轮分别初始化-----------------------------------------*/
     LMotor->controlMode = LK9025::POS_MODE; 
     LMotor->anglePid = LK9025AnglePid;
     LMotor->omegaPid = LK9025OmegaPid;
+    LMotor->positionPid = LK9025PositionPid;
     LMotor->speedPid.Clear();
     LMotor->positionPid.Clear();
     LMotor->anglePid.Clear();
     LMotor->omegaPid.Clear();
 
+
     RMotor->controlMode = LK9025::POS_MODE; 
     RMotor->anglePid = LK9025AnglePid;
     RMotor->omegaPid = LK9025OmegaPid;
+    RMotor->positionPid = LK9025PositionPid;
     RMotor->speedPid.Clear();
     RMotor->positionPid.Clear();
     RMotor->anglePid.Clear();
@@ -48,6 +62,10 @@ void BalanceStandControl::enter()
     //从AHS系统中获取roll倾角和角速度
     Motor_angleRef = AHRS::instance()->INS.Roll;
     Motor_omegaRef = AHRS::instance()->INS.Gyro[1];
+    
+    Motor_positionRef = (LMotor->motorFeedback.positionFdb + RMotor->motorFeedback.positionFdb) / 2;
+
+
 }
 
 void BalanceStandControl::execute()
@@ -68,8 +86,11 @@ void BalanceStandControl::execute()
     LMotor->omegaPid.UpdateResult();
     RMotor->omegaPid.UpdateResult();
 
+    //行进环pid
+
+
     LMotor->currentSet = LMotor->anglePid.result + LMotor->omegaPid.result; // 根据角度PID结果和角速度PID结果设置电流
-    RMotor->currentSet = RMotor->anglePid.result + RMotor->omegaPid.result;
+    RMotor->currentSet = - (RMotor->anglePid.result + RMotor->omegaPid.result);
 }
 
 void BalanceStandControl::exit()

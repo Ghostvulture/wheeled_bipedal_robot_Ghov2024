@@ -61,6 +61,9 @@ public:
         float temperatureFdb;  ///< 电机温度反馈
 
         float torqueFdb;       ///< 电机转矩反馈
+
+        float ecd;             ///< 电机编码器值
+        float last_ecd;         ///< 上次电机编码器值
     };
 
     MotorControlModeType controlMode; ///< 当前电机控制模式

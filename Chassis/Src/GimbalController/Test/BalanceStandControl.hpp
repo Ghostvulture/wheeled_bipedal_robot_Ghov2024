@@ -15,8 +15,7 @@
 
 /**
  * @class BalanceStandControl
- * @brief 云台遥控状态机。
- * 这个模式一般不使用 
+ * @brief pid平衡控制状态机。
  */
 class BalanceStandControl : public StateMachine
 {
@@ -44,6 +43,7 @@ public:
      */
     Pid LK9025AnglePid;///< 速度环PID
     Pid LK9025OmegaPid;///< 位置环PID
+    Pid LK9025PositionPid;///< 位置环PID
 
     /**
      * @brief 电机的位置设定。
@@ -52,6 +52,7 @@ public:
      */
     float Motor_angleSet;
     float Motor_omegaSet;
+    float Motor_positionSet;
 
     /**
      * @brief 电机的位置获取。
@@ -60,6 +61,7 @@ public:
      */
     float Motor_angleRef;
     float Motor_omegaRef;
+    float Motor_positionRef;
 
 
     /**
