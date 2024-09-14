@@ -1,6 +1,7 @@
 {
     "cmake.sourceDirectory": "D:/Aprojects/RM/standard_newcode_0823/RM_NEW_CODE-standard/RM_NEW_CODE-standard/Gimbal/Drivers/CMSIS/NN",
     "files.associations": {
-        "compare": "cpp"
+        "compare": "cpp",
+        "firstorderfilter.hpp": "c"
     }
 }

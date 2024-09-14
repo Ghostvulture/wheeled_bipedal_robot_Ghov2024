@@ -89,14 +89,15 @@ I (../Src/GimbalController/Gimbal/GimbalStateSearch.hpp)(0x66C814A1)
 I (../Src/GimbalController/Gimbal/GimbalStateRelax.hpp)(0x66C814A1)
 I (../Src/GimbalController/Gimbal/GimbalStateFPS.hpp)(0x66C814A1)
 I (../Src/GimbalController/Shooter/ShooterController.hpp)(0x66C814A1)
-I (..\Src\GimbalController\Test\BalanceController.hpp)(0x66CDA516)
-I (..\Src\Entity\LKMotor\LKMotorHandler.hpp)(0x66CABD19)
-I (..\Src\Entity\LKMotor\LKMotor.hpp)(0x66CD97B1)
+I (..\Src\GimbalController\Test\BalanceController.hpp)(0x66E438C7)
+I (..\Src\Entity\LKMotor\LKMotorHandler.hpp)(0x66E23BF1)
+I (..\Src\Entity\LKMotor\LKMotor.hpp)(0x66E2F804)
 I (..\Src\Entity\LKMotor\LK9025.hpp)(0x66CABCFA)
 I (..\Src\GimbalController\Test\BalanceSpeedControl.hpp)(0x66CD9702)
 I (..\Src\GimbalController\Test\BalanceStateRelax.hpp)(0x66CD92A5)
 I (..\Src\GimbalController\Test\BalanceRemoteControl.hpp)(0x66CD9411)
-I (..\Src\GimbalController\Test\BalanceStandControl.hpp)(0x66CD981A)
+I (..\Src\GimbalController\Test\BalanceStandControl.hpp)(0x66E59F73)
+I (..\Src\Entity\LKMotor\odometer.hpp)(0x66E59DF8)
 I (../Src/Entity/LED/LED.h)(0x66C814A1)
 I (../Src/BSP/gpio/bsp_gpio.h)(0x66C814A0)
 I (../Src/BSP/bsp.h)(0x66C814A0)
@@ -1850,7 +1851,7 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x66C8149A)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd.h)(0x66C81499)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h)(0x66C8149A)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd_ex.h)(0x66C81499)
-I (..\Src\Entity\LKMotor\LKMotor.hpp)(0x66CD97B1)
+I (..\Src\Entity\LKMotor\LKMotor.hpp)(0x66E2F804)
 I (../Src/Utility/Pid.hpp)(0x66C814A1)
 I (../Src/Utility/Math.hpp)(0x66C814A1)
 I (D:\Keil_v5\ARM\ARMCC\include\math.h)(0x60252378)
@@ -1901,7 +1902,7 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x66C8149A)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd.h)(0x66C81499)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h)(0x66C8149A)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd_ex.h)(0x66C81499)
-I (..\Src\Entity\LKMotor\LKMotor.hpp)(0x66CD97B1)
+I (..\Src\Entity\LKMotor\LKMotor.hpp)(0x66E2F804)
 I (../Src/Utility/Pid.hpp)(0x66C814A1)
 I (../Src/Utility/Math.hpp)(0x66C814A1)
 I (D:\Keil_v5\ARM\ARMCC\include\math.h)(0x60252378)
@@ -1911,8 +1912,8 @@ I (D:\Keil_v5\ARM\ARMCC\include\float.h)(0x6025237E)
 I (D:\Keil_v5\ARM\ARMCC\include\limits.h)(0x60252376)
 I (../Src/BSP/can/bsp_can.h)(0x66C814A0)
 I (../Src/Entity/IMU/BMI088/math_first_order_filter.h)(0x66C29F8F)
-F (..\Src\Entity\LKMotor\LKMotorHandler.cpp)(0x66CD4E93)(--cpp -c --cpu Cortex-M4.fp.sp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Src/BSP -I ../Src/BSP/can -I ../Src/BSP/dwt -I ../Src/BSP/gpio -I ../Src/BSP/iic -I ../Src/BSP/pwm -I ../Src/BSP/spi -I ../Src/BSP/tim -I ../Src/BSP/usart -I ../Src/Entity -I ../Src/Entity/board_connectivity -I ../Src/Entity/buzzer -I ../Src/Entity/daemon -I ../Src/Entity/Dr16 -I ../Src/Entity/GMMotor -I ../Src/Entity/IMU/BMI088 -I ../Src/Entity/IMU/IST8310 -I ../Src/Entity/LED -I ../Src/Utility -I ../Src/GimbalController/Chassis -I ../Src/GimbalController -I ../Src/GimbalController/Gimbal -I ../Src/GimbalController/Shooter -I ../Src/Entity/IMU/AHRS -I ../Src/Entity/IMU/EKF -I ../Middlewares/ST/ARM/DSP/Inc -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I ..\Src\BSP\usb -I ..\Src\GimbalController\Test -I ..\Src\Entity\LKMotor --cpp11-I.\RTE\_Gimbal-ID:\Arm\Packs\ARM\CMSIS\6.1.0\CMSIS\Core\Include-ID:\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="540" -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o gimbal\lkmotorhandler.o --omf_browse gimbal\lkmotorhandler.crf --depend gimbal\lkmotorhandler.d)
-I (..\Src\Entity\LKMotor\LKMotorHandler.hpp)(0x66CABD19)
+F (..\Src\Entity\LKMotor\LKMotorHandler.cpp)(0x66E2F80F)(--cpp -c --cpu Cortex-M4.fp.sp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Src/BSP -I ../Src/BSP/can -I ../Src/BSP/dwt -I ../Src/BSP/gpio -I ../Src/BSP/iic -I ../Src/BSP/pwm -I ../Src/BSP/spi -I ../Src/BSP/tim -I ../Src/BSP/usart -I ../Src/Entity -I ../Src/Entity/board_connectivity -I ../Src/Entity/buzzer -I ../Src/Entity/daemon -I ../Src/Entity/Dr16 -I ../Src/Entity/GMMotor -I ../Src/Entity/IMU/BMI088 -I ../Src/Entity/IMU/IST8310 -I ../Src/Entity/LED -I ../Src/Utility -I ../Src/GimbalController/Chassis -I ../Src/GimbalController -I ../Src/GimbalController/Gimbal -I ../Src/GimbalController/Shooter -I ../Src/Entity/IMU/AHRS -I ../Src/Entity/IMU/EKF -I ../Middlewares/ST/ARM/DSP/Inc -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I ..\Src\BSP\usb -I ..\Src\GimbalController\Test -I ..\Src\Entity\LKMotor --cpp11-I.\RTE\_Gimbal-ID:\Arm\Packs\ARM\CMSIS\6.1.0\CMSIS\Core\Include-ID:\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="540" -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o gimbal\lkmotorhandler.o --omf_browse gimbal\lkmotorhandler.crf --depend gimbal\lkmotorhandler.d)
+I (..\Src\Entity\LKMotor\LKMotorHandler.hpp)(0x66E23BF1)
 I (../Core/Inc/main.h)(0x66C81489)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x66C81499)
 I (../Core/Inc/stm32f4xx_hal_conf.h)(0x66C81489)
@@ -1953,7 +1954,7 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd.h)(0x66C81499)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h)(0x66C8149A)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd_ex.h)(0x66C81499)
 I (../Src/BSP/can/bsp_can.h)(0x66C814A0)
-I (..\Src\Entity\LKMotor\LKMotor.hpp)(0x66CD97B1)
+I (..\Src\Entity\LKMotor\LKMotor.hpp)(0x66E2F804)
 I (../Src/Utility/Pid.hpp)(0x66C814A1)
 I (../Src/Utility/Math.hpp)(0x66C814A1)
 I (D:\Keil_v5\ARM\ARMCC\include\math.h)(0x60252378)
@@ -2059,8 +2060,8 @@ I (D:\Keil_v5\ARM\ARMCC\include\math.h)(0x60252378)
 I (../Middlewares/ST/ARM/DSP/Inc/arm_math.h)(0x66C8149F)
 I (D:\Keil_v5\ARM\ARMCC\include\float.h)(0x6025237E)
 I (D:\Keil_v5\ARM\ARMCC\include\limits.h)(0x60252376)
-I (..\Src\Entity\LKMotor\LKMotorHandler.hpp)(0x66CABD19)
-I (..\Src\Entity\LKMotor\LKMotor.hpp)(0x66CD97B1)
+I (..\Src\Entity\LKMotor\LKMotorHandler.hpp)(0x66E23BF1)
+I (..\Src\Entity\LKMotor\LKMotor.hpp)(0x66E2F804)
 F (..\Src\BSP\dwt\bsp_dwt.c)(0x66C814A0)(--c99 -c --cpu Cortex-M4.fp.sp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Src/BSP -I ../Src/BSP/can -I ../Src/BSP/dwt -I ../Src/BSP/gpio -I ../Src/BSP/iic -I ../Src/BSP/pwm -I ../Src/BSP/spi -I ../Src/BSP/tim -I ../Src/BSP/usart -I ../Src/Entity -I ../Src/Entity/board_connectivity -I ../Src/Entity/buzzer -I ../Src/Entity/daemon -I ../Src/Entity/Dr16 -I ../Src/Entity/GMMotor -I ../Src/Entity/IMU/BMI088 -I ../Src/Entity/IMU/IST8310 -I ../Src/Entity/LED -I ../Src/Utility -I ../Src/GimbalController/Chassis -I ../Src/GimbalController -I ../Src/GimbalController/Gimbal -I ../Src/GimbalController/Shooter -I ../Src/Entity/IMU/AHRS -I ../Src/Entity/IMU/EKF -I ../Middlewares/ST/ARM/DSP/Inc -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I ..\Src\BSP\usb -I ..\Src\GimbalController\Test -I ..\Src\Entity\LKMotor --cpp11-I.\RTE\_Gimbal-ID:\Arm\Packs\ARM\CMSIS\6.1.0\CMSIS\Core\Include-ID:\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="540" -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o gimbal\bsp_dwt.o --omf_browse gimbal\bsp_dwt.crf --depend gimbal\bsp_dwt.d)
 I (..\Src\BSP\dwt\bsp_dwt.h)(0x66C814A0)
 I (../Core/Inc/main.h)(0x66C81489)
@@ -3190,7 +3191,7 @@ I (../Src/Entity/GMMotor/GM6020.hpp)(0x66C814A1)
 I (../Src/Entity/GMMotor/GM3508.hpp)(0x66C814A1)
 I (../Src/Entity/GMMotor/GM2006.hpp)(0x66C814A1)
 F (..\Src\GimbalController\Test\BalanceController.cpp)(0x66CD904B)(--cpp -c --cpu Cortex-M4.fp.sp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Src/BSP -I ../Src/BSP/can -I ../Src/BSP/dwt -I ../Src/BSP/gpio -I ../Src/BSP/iic -I ../Src/BSP/pwm -I ../Src/BSP/spi -I ../Src/BSP/tim -I ../Src/BSP/usart -I ../Src/Entity -I ../Src/Entity/board_connectivity -I ../Src/Entity/buzzer -I ../Src/Entity/daemon -I ../Src/Entity/Dr16 -I ../Src/Entity/GMMotor -I ../Src/Entity/IMU/BMI088 -I ../Src/Entity/IMU/IST8310 -I ../Src/Entity/LED -I ../Src/Utility -I ../Src/GimbalController/Chassis -I ../Src/GimbalController -I ../Src/GimbalController/Gimbal -I ../Src/GimbalController/Shooter -I ../Src/Entity/IMU/AHRS -I ../Src/Entity/IMU/EKF -I ../Middlewares/ST/ARM/DSP/Inc -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I ..\Src\BSP\usb -I ..\Src\GimbalController\Test -I ..\Src\Entity\LKMotor --cpp11-I.\RTE\_Gimbal-ID:\Arm\Packs\ARM\CMSIS\6.1.0\CMSIS\Core\Include-ID:\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="540" -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o gimbal\balancecontroller.o --omf_browse gimbal\balancecontroller.crf --depend gimbal\balancecontroller.d)
-I (..\Src\GimbalController\Test\BalanceController.hpp)(0x66CDA516)
+I (..\Src\GimbalController\Test\BalanceController.hpp)(0x66E438C7)
 I (../Core/Inc/main.h)(0x66C81489)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x66C81499)
 I (../Core/Inc/stm32f4xx_hal_conf.h)(0x66C81489)
@@ -3241,8 +3242,8 @@ I (../Middlewares/ST/ARM/DSP/Inc/arm_math.h)(0x66C8149F)
 I (D:\Keil_v5\ARM\ARMCC\include\string.h)(0x6025237E)
 I (D:\Keil_v5\ARM\ARMCC\include\float.h)(0x6025237E)
 I (D:\Keil_v5\ARM\ARMCC\include\limits.h)(0x60252376)
-I (..\Src\Entity\LKMotor\LKMotorHandler.hpp)(0x66CABD19)
-I (..\Src\Entity\LKMotor\LKMotor.hpp)(0x66CD97B1)
+I (..\Src\Entity\LKMotor\LKMotorHandler.hpp)(0x66E23BF1)
+I (..\Src\Entity\LKMotor\LKMotor.hpp)(0x66E2F804)
 I (../Src/Entity/Dr16/Dr16.hpp)(0x66C814A1)
 I (../Src/BSP/usart/bsp_usart.h)(0x66C814A1)
 I (../Src/Entity/Dr16/remoteControl.h)(0x66C814A1)
@@ -3269,7 +3270,8 @@ I (..\Src\GimbalController\Test\BalanceStateRelax.hpp)(0x66CD92A5)
 I (..\Src\GimbalController\Test\BalanceRemoteControl.hpp)(0x66CD9411)
 I (../Src/Entity/board_connectivity/BoardConnectivity.hpp)(0x66C814A1)
 I (../Src/Utility/FirstOrderFilter.hpp)(0x66C814A1)
-I (..\Src\GimbalController\Test\BalanceStandControl.hpp)(0x66CD981A)
+I (..\Src\GimbalController\Test\BalanceStandControl.hpp)(0x66E59F73)
+I (..\Src\Entity\LKMotor\odometer.hpp)(0x66E59DF8)
 F (..\Src\GimbalController\Test\BalanceRemoteControl.cpp)(0x66CD9614)(--cpp -c --cpu Cortex-M4.fp.sp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Src/BSP -I ../Src/BSP/can -I ../Src/BSP/dwt -I ../Src/BSP/gpio -I ../Src/BSP/iic -I ../Src/BSP/pwm -I ../Src/BSP/spi -I ../Src/BSP/tim -I ../Src/BSP/usart -I ../Src/Entity -I ../Src/Entity/board_connectivity -I ../Src/Entity/buzzer -I ../Src/Entity/daemon -I ../Src/Entity/Dr16 -I ../Src/Entity/GMMotor -I ../Src/Entity/IMU/BMI088 -I ../Src/Entity/IMU/IST8310 -I ../Src/Entity/LED -I ../Src/Utility -I ../Src/GimbalController/Chassis -I ../Src/GimbalController -I ../Src/GimbalController/Gimbal -I ../Src/GimbalController/Shooter -I ../Src/Entity/IMU/AHRS -I ../Src/Entity/IMU/EKF -I ../Middlewares/ST/ARM/DSP/Inc -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I ..\Src\BSP\usb -I ..\Src\GimbalController\Test -I ..\Src\Entity\LKMotor --cpp11-I.\RTE\_Gimbal-ID:\Arm\Packs\ARM\CMSIS\6.1.0\CMSIS\Core\Include-ID:\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="540" -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o gimbal\balanceremotecontrol.o --omf_browse gimbal\balanceremotecontrol.crf --depend gimbal\balanceremotecontrol.d)
 I (..\Src\GimbalController\Test\BalanceRemoteControl.hpp)(0x66CD9411)
 I (../Src/GimbalController/StateMachine.hpp)(0x66C814A1)
@@ -3331,7 +3333,7 @@ I (../Src/Entity/GMMotor/GM6020.hpp)(0x66C814A1)
 I (../Src/Entity/GMMotor/GM3508.hpp)(0x66C814A1)
 I (../Src/Entity/GMMotor/GM2006.hpp)(0x66C814A1)
 I (..\Src\Entity\LKMotor\LK9025.hpp)(0x66CABCFA)
-I (..\Src\Entity\LKMotor\LKMotor.hpp)(0x66CD97B1)
+I (..\Src\Entity\LKMotor\LKMotor.hpp)(0x66E2F804)
 I (../Src/Entity/IMU/AHRS/AHRS.hpp)(0x66C814A1)
 I (../Src/Entity/IMU/BMI088/BMI088.hpp)(0x66C814A1)
 I (../Src/BSP/spi/bsp_spi.h)(0x66C814A0)
@@ -3417,7 +3419,7 @@ I (../Src/Entity/IMU/EKF/kalman_filter.h)(0x66C814A1)
 I (D:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x60252374)
 I (../Src/Entity/IMU/EKF/user_lib.h)(0x66C814A1)
 I (..\Src\Entity\LKMotor\LK9025.hpp)(0x66CABCFA)
-I (..\Src\Entity\LKMotor\LKMotor.hpp)(0x66CD97B1)
+I (..\Src\Entity\LKMotor\LKMotor.hpp)(0x66E2F804)
 F (..\Src\GimbalController\Test\BalanceStateRelax.cpp)(0x66CAA4BF)(--cpp -c --cpu Cortex-M4.fp.sp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Src/BSP -I ../Src/BSP/can -I ../Src/BSP/dwt -I ../Src/BSP/gpio -I ../Src/BSP/iic -I ../Src/BSP/pwm -I ../Src/BSP/spi -I ../Src/BSP/tim -I ../Src/BSP/usart -I ../Src/Entity -I ../Src/Entity/board_connectivity -I ../Src/Entity/buzzer -I ../Src/Entity/daemon -I ../Src/Entity/Dr16 -I ../Src/Entity/GMMotor -I ../Src/Entity/IMU/BMI088 -I ../Src/Entity/IMU/IST8310 -I ../Src/Entity/LED -I ../Src/Utility -I ../Src/GimbalController/Chassis -I ../Src/GimbalController -I ../Src/GimbalController/Gimbal -I ../Src/GimbalController/Shooter -I ../Src/Entity/IMU/AHRS -I ../Src/Entity/IMU/EKF -I ../Middlewares/ST/ARM/DSP/Inc -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I ..\Src\BSP\usb -I ..\Src\GimbalController\Test -I ..\Src\Entity\LKMotor --cpp11-I.\RTE\_Gimbal-ID:\Arm\Packs\ARM\CMSIS\6.1.0\CMSIS\Core\Include-ID:\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="540" -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o gimbal\balancestaterelax.o --omf_browse gimbal\balancestaterelax.crf --depend gimbal\balancestaterelax.d)
 I (..\Src\GimbalController\Test\BalanceStateRelax.hpp)(0x66CD92A5)
 I (../Src/GimbalController/StateMachine.hpp)(0x66C814A1)
@@ -3477,9 +3479,9 @@ I (../Src/Entity/GMMotor/GM6020.hpp)(0x66C814A1)
 I (../Src/Entity/GMMotor/GM3508.hpp)(0x66C814A1)
 I (../Src/Entity/GMMotor/GM2006.hpp)(0x66C814A1)
 I (..\Src\Entity\LKMotor\LK9025.hpp)(0x66CABCFA)
-I (..\Src\Entity\LKMotor\LKMotor.hpp)(0x66CD97B1)
-F (..\Src\GimbalController\Test\BalanceStandControl.cpp)(0x66E19EB4)(--cpp -c --cpu Cortex-M4.fp.sp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Src/BSP -I ../Src/BSP/can -I ../Src/BSP/dwt -I ../Src/BSP/gpio -I ../Src/BSP/iic -I ../Src/BSP/pwm -I ../Src/BSP/spi -I ../Src/BSP/tim -I ../Src/BSP/usart -I ../Src/Entity -I ../Src/Entity/board_connectivity -I ../Src/Entity/buzzer -I ../Src/Entity/daemon -I ../Src/Entity/Dr16 -I ../Src/Entity/GMMotor -I ../Src/Entity/IMU/BMI088 -I ../Src/Entity/IMU/IST8310 -I ../Src/Entity/LED -I ../Src/Utility -I ../Src/GimbalController/Chassis -I ../Src/GimbalController -I ../Src/GimbalController/Gimbal -I ../Src/GimbalController/Shooter -I ../Src/Entity/IMU/AHRS -I ../Src/Entity/IMU/EKF -I ../Middlewares/ST/ARM/DSP/Inc -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I ..\Src\BSP\usb -I ..\Src\GimbalController\Test -I ..\Src\Entity\LKMotor --cpp11-I.\RTE\_Gimbal-ID:\Arm\Packs\ARM\CMSIS\6.1.0\CMSIS\Core\Include-ID:\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="540" -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o gimbal\balancestandcontrol.o --omf_browse gimbal\balancestandcontrol.crf --depend gimbal\balancestandcontrol.d)
-I (..\Src\GimbalController\Test\BalanceStandControl.hpp)(0x66CD981A)
+I (..\Src\Entity\LKMotor\LKMotor.hpp)(0x66E2F804)
+F (..\Src\GimbalController\Test\BalanceStandControl.cpp)(0x66E5A049)(--cpp -c --cpu Cortex-M4.fp.sp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Src/BSP -I ../Src/BSP/can -I ../Src/BSP/dwt -I ../Src/BSP/gpio -I ../Src/BSP/iic -I ../Src/BSP/pwm -I ../Src/BSP/spi -I ../Src/BSP/tim -I ../Src/BSP/usart -I ../Src/Entity -I ../Src/Entity/board_connectivity -I ../Src/Entity/buzzer -I ../Src/Entity/daemon -I ../Src/Entity/Dr16 -I ../Src/Entity/GMMotor -I ../Src/Entity/IMU/BMI088 -I ../Src/Entity/IMU/IST8310 -I ../Src/Entity/LED -I ../Src/Utility -I ../Src/GimbalController/Chassis -I ../Src/GimbalController -I ../Src/GimbalController/Gimbal -I ../Src/GimbalController/Shooter -I ../Src/Entity/IMU/AHRS -I ../Src/Entity/IMU/EKF -I ../Middlewares/ST/ARM/DSP/Inc -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I ..\Src\BSP\usb -I ..\Src\GimbalController\Test -I ..\Src\Entity\LKMotor --cpp11-I.\RTE\_Gimbal-ID:\Arm\Packs\ARM\CMSIS\6.1.0\CMSIS\Core\Include-ID:\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="540" -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o gimbal\balancestandcontrol.o --omf_browse gimbal\balancestandcontrol.crf --depend gimbal\balancestandcontrol.d)
+I (..\Src\GimbalController\Test\BalanceStandControl.hpp)(0x66E59F73)
 I (../Src/GimbalController/StateMachine.hpp)(0x66C814A1)
 I (../Src/Entity/GMMotor/GMMotorHandler.hpp)(0x66C814A1)
 I (../Core/Inc/main.h)(0x66C81489)
@@ -3550,7 +3552,8 @@ I (../Src/Entity/IMU/EKF/kalman_filter.h)(0x66C814A1)
 I (D:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x60252374)
 I (../Src/Entity/IMU/EKF/user_lib.h)(0x66C814A1)
 I (..\Src\Entity\LKMotor\LK9025.hpp)(0x66CABCFA)
-I (..\Src\Entity\LKMotor\LKMotor.hpp)(0x66CD97B1)
+I (..\Src\Entity\LKMotor\LKMotor.hpp)(0x66E2F804)
+I (..\Src\Entity\LKMotor\odometer.hpp)(0x66E59DF8)
 F (../USB_DEVICE/App/usb_device.c)(0x66C814A2)(--c99 -c --cpu Cortex-M4.fp.sp -g -O1 -Otime --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Src/BSP -I ../Src/BSP/can -I ../Src/BSP/dwt -I ../Src/BSP/gpio -I ../Src/BSP/iic -I ../Src/BSP/pwm -I ../Src/BSP/spi -I ../Src/BSP/tim -I ../Src/BSP/usart -I ../Src/Entity -I ../Src/Entity/board_connectivity -I ../Src/Entity/buzzer -I ../Src/Entity/daemon -I ../Src/Entity/Dr16 -I ../Src/Entity/GMMotor -I ../Src/Entity/IMU/BMI088 -I ../Src/Entity/IMU/IST8310 -I ../Src/Entity/LED -I ../Src/Utility -I ../Src/GimbalController/Chassis -I ../Src/GimbalController -I ../Src/GimbalController/Gimbal -I ../Src/GimbalController/Shooter -I ../Src/Entity/IMU/AHRS -I ../Src/Entity/IMU/EKF -I ../Middlewares/ST/ARM/DSP/Inc -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I ..\Src\BSP\usb -I ..\Src\GimbalController\Test -I ..\Src\Entity\LKMotor --cpp11-I.\RTE\_Gimbal-ID:\Arm\Packs\ARM\CMSIS\6.1.0\CMSIS\Core\Include-ID:\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="540" -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o gimbal\usb_device.o --omf_browse gimbal\usb_device.crf --depend gimbal\usb_device.d)
 I (../USB_DEVICE/App/usb_device.h)(0x66C814A2)
 I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x66C81496)

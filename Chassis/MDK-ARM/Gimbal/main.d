@@ -95,6 +95,7 @@ gimbal\main.o: ..\Src\GimbalController\Test\BalanceSpeedControl.hpp
 gimbal\main.o: ..\Src\GimbalController\Test\BalanceStateRelax.hpp
 gimbal\main.o: ..\Src\GimbalController\Test\BalanceRemoteControl.hpp
 gimbal\main.o: ..\Src\GimbalController\Test\BalanceStandControl.hpp
+gimbal\main.o: ..\Src\Entity\LKMotor\odometer.hpp
 gimbal\main.o: ../Src/Entity/LED/LED.h
 gimbal\main.o: ../Src/BSP/gpio/bsp_gpio.h
 gimbal\main.o: ../Src/BSP/bsp.h

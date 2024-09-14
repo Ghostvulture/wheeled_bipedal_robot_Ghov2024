@@ -10,6 +10,7 @@
 #include "GM2006.hpp"
 #include "AHRS.hpp"
 #include "LK9025.hpp"
+#include "odometer.hpp"
 
 #include "Math.hpp"
 
@@ -22,10 +23,14 @@ class BalanceStandControl : public StateMachine
 public:
     /**
      * @brief 构造函数。
+     * @note (Type arg) 构造函数的参数列表，用于传递外部的数据或对象给类的成员变量
+     * @note member(arg) 初始化列表，用于在进入构造函数体之前对成员变量进行初始化
      */
     BalanceStandControl(LK9025 *LMotor,
-                         LK9025 *RMotor) : LMotor(LMotor),
-                                           RMotor(RMotor) {};
+                         LK9025 *RMotor,
+                         Odometer *odometer) : LMotor(LMotor),
+                                           RMotor(RMotor),
+                                           odometer(odometer) {};
 
     /**
      * @brief 析构函数。
@@ -37,6 +42,12 @@ public:
      */
     LK9025 *LMotor;
     LK9025 *RMotor;
+    Odometer *odometer;
+
+    /**
+     * @brief 遥控器
+     */
+    float Vx;
 
     /**
      * @brief pid结构体。
@@ -44,6 +55,7 @@ public:
     Pid LK9025AnglePid;///< 速度环PID
     Pid LK9025OmegaPid;///< 位置环PID
     Pid LK9025PositionPid;///< 位置环PID
+    Pid LK9025SpeedPid;///< 速度环PID
 
     /**
      * @brief 电机的位置设定。
@@ -61,7 +73,7 @@ public:
      */
     float Motor_angleRef;
     float Motor_omegaRef;
-    float Motor_positionRef;
+    float Motor_DisplacementRef;
 
 
     /**

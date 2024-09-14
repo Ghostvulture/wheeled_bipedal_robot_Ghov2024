@@ -71,6 +71,8 @@ public:
     LK9025 RMotor;
     LK9025 LMotor;
 
+    Odometer odometer;
+
     /**
      * @brief 云台状态枚举。
      * @note 如果需要添加新的状态，需要在此处添加。
@@ -121,7 +123,8 @@ public:
     BalanceController() : RelaxState(&LMotor,&RMotor),
                          RemoteControlState(&LMotor,&RMotor),
                          SpeedState(&LMotor,&RMotor),
-                         StandState(&LMotor,&RMotor)
+                         StandState(&LMotor,&RMotor, &odometer),
+                         odometer(LMotor, RMotor)
     {
         this->CurrentSate = STATE_RELAX;
     }

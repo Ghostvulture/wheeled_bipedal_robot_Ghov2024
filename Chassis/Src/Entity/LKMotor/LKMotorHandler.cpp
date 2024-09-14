@@ -133,8 +133,8 @@ void LKMotorHandler::updateFeedback()
 
             
             //add for odometer
-            LKMotorList[0][i]->motorFeedback.ecd = can1_receive_data[i].ecd;
-            LKMotorList[0][i]->motorFeedback.last_ecd = can1_receive_data[i].last_ecd;
+            LKMotorList[0][i]->motorFeedback.delta_ecd = can1_receive_data[i].ecd - can1_receive_data[i].last_ecd;
+            
             // 位置反馈，转换为弧度，并限幅至-PI到PI
             LKMotorList[0][i]->motorFeedback.positionFdb = Math::LoopFloatConstrain((float)(can1_receive_data[i].ecd - LKMotorList[0][i]->offset) * RawPos2Rad, -Math::Pi, Math::Pi);
             LKMotorList[0][i]->motorFeedback.speedFdb = can1_receive_data[i].speed_dps * RawDps2Rpsps;

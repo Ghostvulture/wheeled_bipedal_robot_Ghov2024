@@ -80,3 +80,4 @@ gimbal\balancecontroller.o: ..\Src\GimbalController\Test\BalanceRemoteControl.hp
 gimbal\balancecontroller.o: ../Src/Entity/board_connectivity/BoardConnectivity.hpp
 gimbal\balancecontroller.o: ../Src/Utility/FirstOrderFilter.hpp
 gimbal\balancecontroller.o: ..\Src\GimbalController\Test\BalanceStandControl.hpp
+gimbal\balancecontroller.o: ..\Src\Entity\LKMotor\odometer.hpp

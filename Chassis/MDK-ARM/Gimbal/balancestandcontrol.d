@@ -72,3 +72,4 @@ gimbal\balancestandcontrol.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 gimbal\balancestandcontrol.o: ../Src/Entity/IMU/EKF/user_lib.h
 gimbal\balancestandcontrol.o: ..\Src\Entity\LKMotor\LK9025.hpp
 gimbal\balancestandcontrol.o: ..\Src\Entity\LKMotor\LKMotor.hpp
+gimbal\balancestandcontrol.o: ..\Src\Entity\LKMotor\odometer.hpp

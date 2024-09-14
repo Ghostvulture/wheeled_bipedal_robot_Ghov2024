@@ -1,4 +1,5 @@
 #include "BalanceStandControl.hpp"
+#include "odometer.hpp"
 
 void BalanceStandControl::init()
 {
@@ -24,11 +25,15 @@ void BalanceStandControl::init()
     //位移环
     LK9025PositionPid.kp = 60.0f;
     LK9025PositionPid.ki = 0.0f;
-    LK9025PositionPid.kd = 5.0f;
+    LK9025PositionPid.kd = 0.0f;
     LK9025PositionPid.maxIOut = 3;
     LK9025PositionPid.maxOut = 15000;
-
-
+    //速度环
+    LK9025SpeedPid.kp = 60.0f;
+    LK9025SpeedPid.ki = 0.0f;
+    LK9025SpeedPid.kd = 0.0f;
+    LK9025SpeedPid.maxIOut = 3;
+    LK9025SpeedPid.maxOut = 15000;
     /*-----------------------------------------左右轮分别初始化-----------------------------------------*/
     LMotor->controlMode = LK9025::POS_MODE; 
     LMotor->anglePid = LK9025AnglePid;
@@ -55,6 +60,10 @@ void BalanceStandControl::init()
     LMotor->setOutput();
     RMotor->setOutput();
 
+    //里程计初始化,进入状态机时初始化一次
+    //TODO: 仅仅当Vx趋近于0时开启位移环
+    Odometer odemeter(*LMotor, *RMotor);
+    Motor_DisplacementRef = odemeter.init();
 }
 
 void BalanceStandControl::enter()
@@ -63,8 +72,8 @@ void BalanceStandControl::enter()
     Motor_angleRef = AHRS::instance()->INS.Roll;
     Motor_omegaRef = AHRS::instance()->INS.Gyro[1];
     
-    Motor_positionRef = (LMotor->motorFeedback.positionFdb + RMotor->motorFeedback.positionFdb) / 2;
-
+    //获取遥控器设定速度
+    Vx = Dr16::instance()->rc_right_y * 5;
 
 }
 
@@ -86,11 +95,30 @@ void BalanceStandControl::execute()
     LMotor->omegaPid.UpdateResult();
     RMotor->omegaPid.UpdateResult();
 
-    //行进环pid
+    odometer->update();
+    //位移环pid，当且仅当Vx趋近于0时开启位移环
+    if (Vx < 0.1 && Vx > -0.1)
+    {    
+    //to test
+    // LMotor->positionPid.ref = RMotor->positionPid.ref = Motor_positionRef; 
+    // LMotor->positionPid.fdb = LMotor->motorFeedback.positionFdb;
+    // RMotor->positionPid.fdb = RMotor->motorFeedback.positionFdb;
+    LMotor->positionPid.ref = RMotor->positionPid.ref = Motor_DisplacementRef / 0.1; //轮子半径为0.1m，位移->弧度制转角
+    LMotor->positionPid.fdb = RMotor->positionPid.fdb = odometer->odometry.x / 0.1;
+
+    LMotor->positionPid.UpdateResult();
+    RMotor->positionPid.UpdateResult();
+    }
+
+    //速度环pid
+    LMotor->speedPid.ref = RMotor->speedPid.ref = Vx;
+    LMotor->speedPid.fdb = LMotor->motorFeedback.speedFdb;
+    RMotor->speedPid.fdb = RMotor->motorFeedback.speedFdb;
 
 
-    LMotor->currentSet = LMotor->anglePid.result + LMotor->omegaPid.result; // 根据角度PID结果和角速度PID结果设置电流
-    RMotor->currentSet = - (RMotor->anglePid.result + RMotor->omegaPid.result);
+
+    LMotor->currentSet = LMotor->anglePid.result + LMotor->omegaPid.result + LMotor->positionPid.result; //设置电流
+    RMotor->currentSet = - (RMotor->anglePid.result + RMotor->omegaPid.result + RMotor->positionPid.result); 
 }
 
 void BalanceStandControl::exit()
