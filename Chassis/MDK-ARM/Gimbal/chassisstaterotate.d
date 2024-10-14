@@ -1,57 +1,63 @@
-gimbal\chassisstaterotate.o: ..\Src\GimbalController\Chassis\ChassisStateRotate.cpp
-gimbal\chassisstaterotate.o: ..\Src\GimbalController\Chassis\ChassisStateRotate.hpp
-gimbal\chassisstaterotate.o: ../Src/GimbalController/StateMachine.hpp
-gimbal\chassisstaterotate.o: ../Src/Entity/board_connectivity/BoardConnectivity.hpp
-gimbal\chassisstaterotate.o: ../Core/Inc/main.h
-gimbal\chassisstaterotate.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
-gimbal\chassisstaterotate.o: ../Core/Inc/stm32f4xx_hal_conf.h
-gimbal\chassisstaterotate.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h
-gimbal\chassisstaterotate.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h
-gimbal\chassisstaterotate.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
-gimbal\chassisstaterotate.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h
-gimbal\chassisstaterotate.o: ../Drivers/CMSIS/Include/core_cm4.h
-gimbal\chassisstaterotate.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
-gimbal\chassisstaterotate.o: ../Drivers/CMSIS/Include/cmsis_version.h
-gimbal\chassisstaterotate.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
-gimbal\chassisstaterotate.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
-gimbal\chassisstaterotate.o: ../Drivers/CMSIS/Include/mpu_armv7.h
-gimbal\chassisstaterotate.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h
-gimbal\chassisstaterotate.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
-gimbal\chassisstaterotate.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
-gimbal\chassisstaterotate.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
-gimbal\chassisstaterotate.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h
-gimbal\chassisstaterotate.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h
-gimbal\chassisstaterotate.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h
-gimbal\chassisstaterotate.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h
-gimbal\chassisstaterotate.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h
-gimbal\chassisstaterotate.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h
-gimbal\chassisstaterotate.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h
-gimbal\chassisstaterotate.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_can.h
-gimbal\chassisstaterotate.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_crc.h
-gimbal\chassisstaterotate.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h
-gimbal\chassisstaterotate.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h
-gimbal\chassisstaterotate.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h
-gimbal\chassisstaterotate.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h
-gimbal\chassisstaterotate.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c_ex.h
-gimbal\chassisstaterotate.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h
-gimbal\chassisstaterotate.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h
-gimbal\chassisstaterotate.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h
-gimbal\chassisstaterotate.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h
-gimbal\chassisstaterotate.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
-gimbal\chassisstaterotate.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
-gimbal\chassisstaterotate.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd.h
-gimbal\chassisstaterotate.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h
-gimbal\chassisstaterotate.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd_ex.h
-gimbal\chassisstaterotate.o: ../Src/BSP/can/bsp_can.h
-gimbal\chassisstaterotate.o: ../Src/BSP/usart/bsp_usart.h
-gimbal\chassisstaterotate.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
-gimbal\chassisstaterotate.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
-gimbal\chassisstaterotate.o: ../Src/Entity/Dr16/Dr16.hpp
-gimbal\chassisstaterotate.o: ../Src/Entity/Dr16/remoteControl.h
-gimbal\chassisstaterotate.o: ../Src/Entity/GMMotor/GMMotor.hpp
-gimbal\chassisstaterotate.o: ../Src/Utility/Pid.hpp
-gimbal\chassisstaterotate.o: ../Src/Utility/Math.hpp
-gimbal\chassisstaterotate.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
-gimbal\chassisstaterotate.o: ../Middlewares/ST/ARM/DSP/Inc/arm_math.h
-gimbal\chassisstaterotate.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\float.h
-gimbal\chassisstaterotate.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\limits.h
+gimbal/chassisstaterotate.o: \
+  ..\Src\GimbalController\Chassis\ChassisStateRotate.cpp \
+  ..\Src\GimbalController\Chassis\ChassisStateRotate.hpp \
+  ..\Src\GimbalController\StateMachine.hpp \
+  ..\Src\Entity\board_connectivity\BoardConnectivity.hpp \
+  ..\Core\Inc\main.h ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h \
+  ..\Core\Inc\stm32f4xx_hal_conf.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_def.h \
+  ..\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h \
+  ..\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f407xx.h \
+  ..\Drivers\CMSIS\Include\core_cm4.h \
+  ..\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\Legacy\stm32_hal_legacy.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc_ex.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_gpio.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_gpio_ex.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_exti.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_dma.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_dma_ex.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_cortex.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_can.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_crc.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash_ex.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash_ramfunc.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_i2c.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_i2c_ex.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pwr.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pwr_ex.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_spi.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim_ex.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_uart.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pcd.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_ll_usb.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pcd_ex.h \
+  D:\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\arm_math.h \
+  D:\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\arm_math_types.h \
+  ..\Drivers\CMSIS\Include\cmsis_compiler.h \
+  D:\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\arm_math_memory.h \
+  D:\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\dsp\none.h \
+  D:\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\dsp\utils.h \
+  D:\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\dsp\basic_math_functions.h \
+  D:\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\dsp\interpolation_functions.h \
+  D:\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\dsp\bayes_functions.h \
+  D:\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\dsp\statistics_functions.h \
+  D:\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\dsp\fast_math_functions.h \
+  D:\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\dsp\matrix_functions.h \
+  D:\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\dsp\complex_math_functions.h \
+  D:\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\dsp\controller_functions.h \
+  D:\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\dsp\support_functions.h \
+  D:\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\dsp\distance_functions.h \
+  D:\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\dsp\svm_functions.h \
+  D:\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\dsp\svm_defines.h \
+  D:\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\dsp\transform_functions.h \
+  D:\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\dsp\filtering_functions.h \
+  D:\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\dsp\quaternion_math_functions.h \
+  D:\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\dsp\window_functions.h \
+  ..\Src\BSP\can\bsp_can.h ..\Src\BSP\usart\bsp_usart.h \
+  ..\Src\Entity\Dr16\Dr16.hpp ..\Src\Entity\Dr16\remoteControl.h \
+  ..\Src\Entity\GMMotor\GMMotor.hpp ..\Src\Utility\Pid.hpp \
+  ..\Src\Utility\Math.hpp

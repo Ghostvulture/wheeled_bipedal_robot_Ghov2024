@@ -5,6 +5,7 @@
 #include "BoardConnectivity.hpp"
 #include "GMMotor.hpp"
 
+#ifdef __cplusplus
 /**
  * @class ChassisStateRelax
  * @brief 底盘放松状态机。
@@ -47,5 +48,5 @@ public:
      */
     ChassisStateRelax() {}
 };
-
+#endif
 #endif // CHASSIS_CONTROLLER_HPP

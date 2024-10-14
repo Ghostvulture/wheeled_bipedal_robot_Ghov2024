@@ -3,6 +3,14 @@
 
 #include "bsp_iic.h"
 #include "bsp_dwt.h"
+#include "stdint.h"
+#include "main.h"
+
+#ifdef __cplusplus
+extern "C"
+{
+#endif
+	
 extern I2C_HandleTypeDef hi2c3; // 从main.c中引用iic3句柄
 
 /*---------------------------相关宏定义---------------------------*/
@@ -43,10 +51,11 @@ extern I2C_HandleTypeDef hi2c3; // 从main.c中引用iic3句柄
  */
 typedef struct ist8310_error_t
 {
-    bool IST8310_CHIP_ID_ERR = true;        // 磁力计ID错误则为true
-    bool IST8310_CONFIG_ERR = true;         // 配置写入错误则为true
-    uint8_t IST8310_CONFIG_ERR_CODE = 0x00; // 配置写入错误码
-    bool IST8310_INIT_ERR = true;           // 自检错误则为true
+    bool IST8310_CHIP_ID_ERR;        // 磁力计ID错误则为true
+    bool IST8310_CONFIG_ERR;         // 配置写入错误则为true
+    uint8_t IST8310_CONFIG_ERR_CODE; // 配置写入错误码
+    bool IST8310_INIT_ERR;           // 自检错误则为true
+    
 
 } ist8310_error_t;
 
@@ -63,10 +72,14 @@ typedef struct ist8310_data_t
     float mag[3];
 } ist8310_data_t;
 
+#ifdef __cplusplus
+
+
 class IST8310
 {
 public:
     IST8310();
+    
     ~IST8310();
 
     /**
@@ -74,7 +87,6 @@ public:
      * 用于判断磁力计是否正常，也用于守护线程的错误处理
      */
     ist8310_error_t ist8310_selfTest;
-
     /**
      * @brief 磁力计原始数据
      * 用于存储磁力计的原始数据
@@ -118,4 +130,9 @@ public:
         return &instance;
     }
 };
+
+#ifdef __cplusplus
+}
+#endif
+#endif
 #endif

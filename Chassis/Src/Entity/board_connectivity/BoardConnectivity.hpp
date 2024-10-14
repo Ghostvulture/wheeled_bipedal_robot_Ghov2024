@@ -1,5 +1,5 @@
-#ifndef BOARD_CONNECTIVITY_H
-#define BOARD_CONNECTIVITY_H
+#ifndef BOARD_CONNECTIVITY_HPP
+#define BOARD_CONNECTIVITY_HPP
 
 #include "main.h"
 
@@ -13,9 +13,7 @@
 #define CHASSIS_REMOTE_CONTROL_ID 0xB1 ///< 底盘控制数据在boardMemory中的ID
 
 #ifdef __cplusplus
-extern "C"
-{
-#endif
+
     class BoardConnectivity
     {
     public:
@@ -125,8 +123,5 @@ extern "C"
         }
     };
 
-#ifdef __cplusplus
-}
 #endif
-
 #endif // BOARD_CONNECTIVITY_H

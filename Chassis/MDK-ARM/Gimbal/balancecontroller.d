@@ -1,83 +1,80 @@
-gimbal\balancecontroller.o: ..\Src\GimbalController\Test\BalanceController.cpp
-gimbal\balancecontroller.o: ..\Src\GimbalController\Test\BalanceController.hpp
-gimbal\balancecontroller.o: ../Core/Inc/main.h
-gimbal\balancecontroller.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
-gimbal\balancecontroller.o: ../Core/Inc/stm32f4xx_hal_conf.h
-gimbal\balancecontroller.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h
-gimbal\balancecontroller.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h
-gimbal\balancecontroller.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
-gimbal\balancecontroller.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h
-gimbal\balancecontroller.o: ../Drivers/CMSIS/Include/core_cm4.h
-gimbal\balancecontroller.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
-gimbal\balancecontroller.o: ../Drivers/CMSIS/Include/cmsis_version.h
-gimbal\balancecontroller.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
-gimbal\balancecontroller.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
-gimbal\balancecontroller.o: ../Drivers/CMSIS/Include/mpu_armv7.h
-gimbal\balancecontroller.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h
-gimbal\balancecontroller.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
-gimbal\balancecontroller.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
-gimbal\balancecontroller.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
-gimbal\balancecontroller.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h
-gimbal\balancecontroller.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h
-gimbal\balancecontroller.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h
-gimbal\balancecontroller.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h
-gimbal\balancecontroller.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h
-gimbal\balancecontroller.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h
-gimbal\balancecontroller.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h
-gimbal\balancecontroller.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_can.h
-gimbal\balancecontroller.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_crc.h
-gimbal\balancecontroller.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h
-gimbal\balancecontroller.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h
-gimbal\balancecontroller.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h
-gimbal\balancecontroller.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h
-gimbal\balancecontroller.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c_ex.h
-gimbal\balancecontroller.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h
-gimbal\balancecontroller.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h
-gimbal\balancecontroller.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h
-gimbal\balancecontroller.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h
-gimbal\balancecontroller.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
-gimbal\balancecontroller.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
-gimbal\balancecontroller.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd.h
-gimbal\balancecontroller.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h
-gimbal\balancecontroller.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd_ex.h
-gimbal\balancecontroller.o: ../Src/GimbalController/Controller.hpp
-gimbal\balancecontroller.o: ../Src/Entity/GMMotor/GMMotorHandler.hpp
-gimbal\balancecontroller.o: ../Src/BSP/can/bsp_can.h
-gimbal\balancecontroller.o: ../Src/Entity/GMMotor/GMMotor.hpp
-gimbal\balancecontroller.o: ../Src/Utility/Pid.hpp
-gimbal\balancecontroller.o: ../Src/Utility/Math.hpp
-gimbal\balancecontroller.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
-gimbal\balancecontroller.o: ../Middlewares/ST/ARM/DSP/Inc/arm_math.h
-gimbal\balancecontroller.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
-gimbal\balancecontroller.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\float.h
-gimbal\balancecontroller.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\limits.h
-gimbal\balancecontroller.o: ..\Src\Entity\LKMotor\LKMotorHandler.hpp
-gimbal\balancecontroller.o: ..\Src\Entity\LKMotor\LKMotor.hpp
-gimbal\balancecontroller.o: ../Src/Entity/Dr16/Dr16.hpp
-gimbal\balancecontroller.o: ../Src/BSP/usart/bsp_usart.h
-gimbal\balancecontroller.o: ../Src/Entity/Dr16/remoteControl.h
-gimbal\balancecontroller.o: ../Src/Entity/GMMotor/GM6020.hpp
-gimbal\balancecontroller.o: ../Src/Entity/GMMotor/GM3508.hpp
-gimbal\balancecontroller.o: ../Src/Entity/GMMotor/GM2006.hpp
-gimbal\balancecontroller.o: ..\Src\Entity\LKMotor\LK9025.hpp
-gimbal\balancecontroller.o: ..\Src\GimbalController\Test\BalanceSpeedControl.hpp
-gimbal\balancecontroller.o: ../Src/GimbalController/StateMachine.hpp
-gimbal\balancecontroller.o: ../Src/Entity/IMU/AHRS/AHRS.hpp
-gimbal\balancecontroller.o: ../Src/Entity/IMU/BMI088/BMI088.hpp
-gimbal\balancecontroller.o: ../Src/BSP/spi/bsp_spi.h
-gimbal\balancecontroller.o: ../Src/BSP/dwt/bsp_dwt.h
-gimbal\balancecontroller.o: ../Src/Entity/IMU/BMI088/BMI088reg.h
-gimbal\balancecontroller.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
-gimbal\balancecontroller.o: ../Src/BSP/pwm/bsp_pwm.h
-gimbal\balancecontroller.o: ../Src/Entity/IMU/IST8310/IST8310.hpp
-gimbal\balancecontroller.o: ../Src/BSP/iic/bsp_iic.h
-gimbal\balancecontroller.o: ../Src/Entity/IMU/EKF/QuaternionEKF.h
-gimbal\balancecontroller.o: ../Src/Entity/IMU/EKF/kalman_filter.h
-gimbal\balancecontroller.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
-gimbal\balancecontroller.o: ../Src/Entity/IMU/EKF/user_lib.h
-gimbal\balancecontroller.o: ..\Src\GimbalController\Test\BalanceStateRelax.hpp
-gimbal\balancecontroller.o: ..\Src\GimbalController\Test\BalanceRemoteControl.hpp
-gimbal\balancecontroller.o: ../Src/Entity/board_connectivity/BoardConnectivity.hpp
-gimbal\balancecontroller.o: ../Src/Utility/FirstOrderFilter.hpp
-gimbal\balancecontroller.o: ..\Src\GimbalController\Test\BalanceStandControl.hpp
-gimbal\balancecontroller.o: ..\Src\Entity\LKMotor\odometer.hpp
+gimbal/balancecontroller.o: \
+  ..\Src\GimbalController\Test\BalanceController.cpp \
+  ..\Src\GimbalController\Test\BalanceController.hpp ..\Core\Inc\main.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h \
+  ..\Core\Inc\stm32f4xx_hal_conf.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_def.h \
+  ..\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h \
+  ..\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f407xx.h \
+  ..\Drivers\CMSIS\Include\core_cm4.h \
+  ..\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\Legacy\stm32_hal_legacy.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc_ex.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_gpio.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_gpio_ex.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_exti.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_dma.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_dma_ex.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_cortex.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_can.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_crc.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash_ex.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash_ramfunc.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_i2c.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_i2c_ex.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pwr.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pwr_ex.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_spi.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim_ex.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_uart.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pcd.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_ll_usb.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pcd_ex.h \
+  D:\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\arm_math.h \
+  D:\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\arm_math_types.h \
+  ..\Drivers\CMSIS\Include\cmsis_compiler.h \
+  D:\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\arm_math_memory.h \
+  D:\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\dsp\none.h \
+  D:\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\dsp\utils.h \
+  D:\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\dsp\basic_math_functions.h \
+  D:\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\dsp\interpolation_functions.h \
+  D:\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\dsp\bayes_functions.h \
+  D:\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\dsp\statistics_functions.h \
+  D:\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\dsp\fast_math_functions.h \
+  D:\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\dsp\matrix_functions.h \
+  D:\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\dsp\complex_math_functions.h \
+  D:\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\dsp\controller_functions.h \
+  D:\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\dsp\support_functions.h \
+  D:\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\dsp\distance_functions.h \
+  D:\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\dsp\svm_functions.h \
+  D:\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\dsp\svm_defines.h \
+  D:\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\dsp\transform_functions.h \
+  D:\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\dsp\filtering_functions.h \
+  D:\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\dsp\quaternion_math_functions.h \
+  D:\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\dsp\window_functions.h \
+  ..\Src\GimbalController\Controller.hpp \
+  ..\Src\Entity\GMMotor\GMMotorHandler.hpp ..\Src\BSP\can\bsp_can.h \
+  ..\Src\Entity\GMMotor\GMMotor.hpp ..\Src\Utility\Pid.hpp \
+  ..\Src\Utility\Math.hpp ..\Src\Entity\LKMotor\LKMotorHandler.hpp \
+  ..\Src\Entity\LKMotor\LKMotor.hpp ..\Src\Entity\Dr16\Dr16.hpp \
+  ..\Src\BSP\usart\bsp_usart.h ..\Src\Entity\Dr16\remoteControl.h \
+  ..\Src\Entity\GMMotor\GM6020.hpp ..\Src\Entity\GMMotor\GM3508.hpp \
+  ..\Src\Entity\GMMotor\GM2006.hpp ..\Src\Entity\LKMotor\LK9025.hpp \
+  ..\Src\GimbalController\Test\BalanceSpeedControl.hpp \
+  ..\Src\GimbalController\StateMachine.hpp \
+  ..\Src\Entity\IMU\AHRS\AHRS.hpp ..\Src\Entity\IMU\BMI088\BMI088.hpp \
+  ..\Src\BSP\spi\bsp_spi.h ..\Src\BSP\dwt\bsp_dwt.h \
+  ..\Src\Entity\IMU\BMI088\BMI088reg.h ..\Src\BSP\pwm\bsp_pwm.h \
+  ..\Src\Entity\IMU\IST8310\IST8310.hpp ..\Src\BSP\iic\bsp_iic.h \
+  ..\Src\Entity\IMU\EKF\QuaternionEKF.h \
+  ..\Src\Entity\IMU\EKF\kalman_filter.h ..\Src\Entity\IMU\EKF\user_lib.h \
+  ..\Src\GimbalController\Test\BalanceStateRelax.hpp \
+  ..\Src\GimbalController\Test\BalanceRemoteControl.hpp \
+  ..\Src\Entity\board_connectivity\BoardConnectivity.hpp \
+  ..\Src\Utility\FirstOrderFilter.hpp \
+  ..\Src\GimbalController\Test\BalanceStandControl.hpp \
+  ..\Src\GimbalController\Test\balance_toolbox\msgs.h \
+  ..\Src\GimbalController\Test\balance_toolbox\balance_task.hpp

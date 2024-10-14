@@ -4,6 +4,9 @@
 #include "stm32f4xx.h"
 #include "math.h"
 #include "arm_math.h"
+
+#ifdef __cplusplus
+
 class Math
 {
 public:
@@ -152,4 +155,5 @@ public:
     }
 };
 
+#endif
 #endif

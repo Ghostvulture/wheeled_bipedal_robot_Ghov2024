@@ -3,6 +3,10 @@
 
 #include "main.h"
 
+#ifdef __cplusplus
+extern "C"
+{
+#endif
 #define SBUS_RX_BUF_NUM 36u ///< SBUS接收缓冲区大小
 
 #define RC_FRAME_LENGTH 18u ///< 遥控器数据帧长度
@@ -57,14 +61,17 @@
  *
  * 此结构用于存储遥控器的完整状态信息，包括操纵杆数据、按钮状态和附加开关。
  */
-typedef __packed struct
+
+#pragma pack(push) //保存对齐状态
+#pragma pack(1)
+typedef  struct
 {
     /**
      * @brief 遥控器的通道和开关。
      *
      * 此子结构用于存储来自遥控器的模拟通道和数字开关输入。
      */
-    __packed struct
+    struct
     {
         int16_t ch[5]; /**< 遥控器的通道值，通常用于模拟操纵杆输入。 */
         char s[2];     /**< 开关状态，通常用于二进制开关输入。 */
@@ -75,7 +82,7 @@ typedef __packed struct
      *
      * 此子结构存储与鼠标相关的数据，这些数据可能用于控制机器人或与计算机模拟接口。
      */
-    __packed struct
+     struct
     {
         int16_t x;       /**< 鼠标 X 轴移动。 */
         int16_t y;       /**< 鼠标 Y 轴移动。 */
@@ -89,13 +96,13 @@ typedef __packed struct
      *
      * 此子结构用于存储遥控器键盘接口上特定按键的状态。
      */
-    __packed struct
+     struct
     {
         uint16_t v; /**< 遥控器键盘接口上按下的键值。 */
     } key;
 
 } RC_ctrl_t;
-
+#pragma pack(pop) //恢复对齐状态
 /**
  * @brief 初始化Dr16遥控器相关配置
  * 调用usat3_init()初始化串口3
@@ -121,4 +128,7 @@ static void SBUS_TO_RC(volatile const uint8_t *sbus_buf, RC_ctrl_t *rc_raw);
  */
 void process_remote_control_data(void);
 
+#ifdef __cplusplus
+}
+#endif
 #endif // REMOTECONTROL_H

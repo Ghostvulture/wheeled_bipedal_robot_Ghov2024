@@ -5,6 +5,7 @@
 #include <math.h>
 #include "arm_math.h"
 
+#ifdef __cplusplus
 class FirstOrderFilter
 {
 private:
@@ -95,4 +96,5 @@ public:
     }
 };
 
+#endif
 #endif /* MATH_FIRST_ORDER_FILTER_H_ */

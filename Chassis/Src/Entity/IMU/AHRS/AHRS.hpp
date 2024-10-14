@@ -17,6 +17,11 @@
 
 #define INS_TASK_PERIOD 1 // ms
 
+#ifdef __cplusplus
+extern "C"
+{
+#endif
+	
 class AHRS
 {
 public:
@@ -252,5 +257,9 @@ public:
         return &ahrs;
     }
 };
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif // !_AHRS_HPP

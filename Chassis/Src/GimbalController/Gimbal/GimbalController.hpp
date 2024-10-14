@@ -16,6 +16,10 @@
 #include "GimbalStateRelax.hpp"
 #include "GimbalStateFPS.hpp"
 
+#ifdef __cplusplus
+extern "C"
+{
+#endif
 /**
  * @struct USBSendPacket
  * @brief USB发送数据包结构体。
@@ -165,4 +169,10 @@ public:
     }
 };
 
+
+void main_demo();
+
+#ifdef __cplusplus
+}
+#endif
 #endif

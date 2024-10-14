@@ -1,0 +1,13 @@
+gimbal\arm_quaternion_product_f32.o: ..\Drivers\CMSIS\DSP\Source\QuaternionMathFunctions\arm_quaternion_product_f32.c
+gimbal\arm_quaternion_product_f32.o: ..\Drivers\CMSIS\DSP\Include\dsp\quaternion_math_functions.h
+gimbal\arm_quaternion_product_f32.o: ..\Drivers\CMSIS\DSP\Include\arm_math_types.h
+gimbal\arm_quaternion_product_f32.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
+gimbal\arm_quaternion_product_f32.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+gimbal\arm_quaternion_product_f32.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
+gimbal\arm_quaternion_product_f32.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+gimbal\arm_quaternion_product_f32.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
+gimbal\arm_quaternion_product_f32.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\float.h
+gimbal\arm_quaternion_product_f32.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\limits.h
+gimbal\arm_quaternion_product_f32.o: ..\Drivers\CMSIS\DSP\Include\arm_math_memory.h
+gimbal\arm_quaternion_product_f32.o: ..\Drivers\CMSIS\DSP\Include\dsp/none.h
+gimbal\arm_quaternion_product_f32.o: ..\Drivers\CMSIS\DSP\Include\dsp/utils.h

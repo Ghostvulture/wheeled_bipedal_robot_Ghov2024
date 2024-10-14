@@ -101,10 +101,10 @@ void BoardConnectivity::BoardConnectivity_Send()
 
 void BoardConnectivity::BoardConnectivity_Float2Byte(float f, uint8_t *byte)
 {
-    memcpy(byte, &f, sizeof(f));
+    memcpy(byte, &f, sizeof(float));
 }
 
 void BoardConnectivity::BoardConnectivity_Byte2Float(uint8_t *byte, float *f)
 {
-    memcpy(f, byte, sizeof(f));
+    memcpy(f, byte, sizeof(float));
 }

@@ -1,5 +1,18 @@
 #include "BalanceStandControl.hpp"
-#include "odometer.hpp"
+
+#include "Math.hpp"
+#include "arm_math.h"
+
+//float VEL_KF;
+
+
+static float vel_temp;
+//static float q_inv[4];
+//static float a_body[4];
+static float a_world[4] = {0};
+static float tmp[4] = {0};
+static float a;
+float test_FilteredValue;
 
 void BalanceStandControl::init()
 {
@@ -62,8 +75,7 @@ void BalanceStandControl::init()
 
     //里程计初始化,进入状态机时初始化一次
     //TODO: 仅仅当Vx趋近于0时开启位移环
-    Odometer odemeter(*LMotor, *RMotor);
-    Motor_DisplacementRef = odemeter.init();
+    
 }
 
 void BalanceStandControl::enter()
@@ -71,9 +83,26 @@ void BalanceStandControl::enter()
     //从AHS系统中获取roll倾角和角速度
     Motor_angleRef = AHRS::instance()->INS.Roll;
     Motor_omegaRef = AHRS::instance()->INS.Gyro[1];
-    
-    //获取遥控器设定速度
-    Vx = Dr16::instance()->rc_right_y * 5;
+
+    //融合里程计
+    vel_temp = 0.5f * (LMotor->motorFeedback.speedFdb + RMotor->motorFeedback.speedFdb) * WHEEL_RADIUS;
+    float q_inv[4] = {AHRS::instance()->INS.q[0], -AHRS::instance()->INS.q[1], -AHRS::instance()->INS.q[2], -AHRS::instance()->INS.q[3]};
+    float a_body[4] = {AHRS::instance()->INS.Accel[0], AHRS::instance()->INS.Accel[1], AHRS::instance()->INS.Accel[2]};
+    arm_quaternion_product_f32(AHRS::instance()->INS.q, a_body, tmp, 1);
+    arm_quaternion_product_f32(tmp, q_inv, a_world, 1);
+    a = sqrtf(a_world[1] * a_world[1] + a_world[2] * a_world[2]) * 
+        arm_cos_f32(atan2f(a_world[2], a_world[1]) - AHRS::instance()->INS.Yaw);//yaw单位？
+
+    kf_vel.UpdateKalman(vel_temp, a);
+
+    odometer_msg.x = kf_vel.GetXhat();
+		odometer_msg.v = kf_vel.GetVhat();
+    odometer_msg.a_z = a_world[3];
+
+//    VEL_KF = vel_temp;
+
+    // //获取遥控器设定速度
+    // Vx = Dr16::instance()->rc_right_y * 0.5f;
 
 }
 
@@ -95,30 +124,12 @@ void BalanceStandControl::execute()
     LMotor->omegaPid.UpdateResult();
     RMotor->omegaPid.UpdateResult();
 
-    odometer->update();
-    //位移环pid，当且仅当Vx趋近于0时开启位移环
-    if (Vx < 0.1 && Vx > -0.1)
-    {    
-    //to test
-    // LMotor->positionPid.ref = RMotor->positionPid.ref = Motor_positionRef; 
-    // LMotor->positionPid.fdb = LMotor->motorFeedback.positionFdb;
-    // RMotor->positionPid.fdb = RMotor->motorFeedback.positionFdb;
-    LMotor->positionPid.ref = RMotor->positionPid.ref = Motor_DisplacementRef / 0.1; //轮子半径为0.1m，位移->弧度制转角
-    LMotor->positionPid.fdb = RMotor->positionPid.fdb = odometer->odometry.x / 0.1;
-
-    LMotor->positionPid.UpdateResult();
-    RMotor->positionPid.UpdateResult();
-    }
-
-    //速度环pid
-    LMotor->speedPid.ref = RMotor->speedPid.ref = Vx;
-    LMotor->speedPid.fdb = LMotor->motorFeedback.speedFdb;
-    RMotor->speedPid.fdb = RMotor->motorFeedback.speedFdb;
 
 
 
-    LMotor->currentSet = LMotor->anglePid.result + LMotor->omegaPid.result + LMotor->positionPid.result; //设置电流
-    RMotor->currentSet = - (RMotor->anglePid.result + RMotor->omegaPid.result + RMotor->positionPid.result); 
+
+    LMotor->currentSet = LMotor->anglePid.result + LMotor->omegaPid.result; //设置电流
+    RMotor->currentSet = - (RMotor->anglePid.result + RMotor->omegaPid.result); 
 }
 
 void BalanceStandControl::exit()

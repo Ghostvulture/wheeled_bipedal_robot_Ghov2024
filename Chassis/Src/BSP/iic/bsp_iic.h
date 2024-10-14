@@ -2,7 +2,10 @@
 #define __BSP_IIC_H
 
 #include "main.h"
-
+#ifdef __cplusplus
+extern "C"
+{
+#endif
 /**
  * @brief  IIC工作模式
  * @param IIC_MODE_BLOCK: 阻塞模式
@@ -44,4 +47,7 @@ void iic_writeData(I2C_HandleTypeDef *hi2c, uint16_t dev_addr, uint16_t reg_addr
  */
 void iic_readData(I2C_HandleTypeDef *hi2c, uint16_t dev_addr, uint16_t reg_addr, uint16_t mem_addsize, uint8_t *pData, uint16_t len);
 
+#ifdef __cplusplus
+}
+#endif
 #endif

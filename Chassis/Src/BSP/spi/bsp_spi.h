@@ -2,7 +2,10 @@
 #define BSP_SPI_H
 
 #include "main.h"
-
+#ifdef __cplusplus
+extern "C"
+{
+#endif
 typedef enum
 {
     SPI_BLOCK_MODE = 0,
@@ -35,4 +38,7 @@ void spi_sendData(SPI_HandleTypeDef *hspi, uint8_t *data, uint8_t len, SPI_WORK_
  */
 void spi_readData(SPI_HandleTypeDef *hspi, uint8_t *pData, uint8_t len, SPI_WORK_MODE mode);
 
+#ifdef __cplusplus
+}
+#endif
 #endif // !BSP_SPI_Hs

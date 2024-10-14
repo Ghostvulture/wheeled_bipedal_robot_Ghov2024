@@ -2,7 +2,10 @@
 #define BSP_USART_H
 
 #include "main.h"
-
+#ifdef __cplusplus
+extern "C"
+{
+#endif
 /**
  * @brief 初始化串口。
 */
@@ -22,4 +25,7 @@ void usart1_init(void);
 */
 void usart3_init(uint8_t *rx1_buf, uint8_t *rx2_buf, uint16_t dma_buf_num);
 
+#ifdef __cplusplus
+}
+#endif
 #endif //  __BSP_USART_H

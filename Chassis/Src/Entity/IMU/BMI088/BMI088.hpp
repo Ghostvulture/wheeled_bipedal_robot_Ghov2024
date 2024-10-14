@@ -99,6 +99,11 @@ typedef struct bmi088_error_t
     bool BMI088_INIT_ERR = true;  // BMI088初始化错误则为true
 } bmi088_error_t;
 
+
+#ifdef __cplusplus
+extern "C"
+{
+#endif
 class BMI088
 {
 public:
@@ -230,4 +235,7 @@ public:
     }
 };
 
+#ifdef __cplusplus
+}
+#endif
 #endif // BMI088_HPP

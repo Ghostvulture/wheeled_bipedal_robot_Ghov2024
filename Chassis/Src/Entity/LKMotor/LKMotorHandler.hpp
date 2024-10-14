@@ -13,6 +13,8 @@
 /**
  * @brief 电机控制类
  */
+#ifdef __cplusplus
+
 class LKMotorHandler
 {
 public:
@@ -80,4 +82,6 @@ public:
     }
 };
 
+
+#endif
 #endif // LKMOTORHANDLER_HPP

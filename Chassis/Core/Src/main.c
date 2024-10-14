@@ -22,24 +22,11 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "ChassisController.hpp"
-#include "GimbalController.hpp"
-#include "ShooterController.hpp"
-#include "BalanceController.hpp"
 
-#include "GMMotorHandler.hpp"
-#include "LKMotorHandler.hpp"
-
-#include "Dr16.hpp"
-#include "BoardConnectivity.hpp"
-#include "BMI088.hpp"
-#include "IST8310.hpp"
-#include "LED.h"
-#include "AHRS.hpp"
-
-#include "bsp.h"
 
 #include "stm32f4xx_it.h"
+#include "cpp_main.hpp"
+#include "LED.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -81,21 +68,9 @@ DMA_HandleTypeDef hdma_usart3_rx;
 
 /* USER CODE BEGIN PV */
 
-GMMotorHandler *GMmotorHandler = GMMotorHandler::instance(); // 电机控制
-LKMotorHandler *LKmotorHandler = LKMotorHandler::instance(); 
 
-Dr16 *dr16 = Dr16::instance();
-BMI088 *bmi088 = BMI088::instance();
-IST8310 *ist8310 = IST8310::instance();
-BoardConnectivity *boardConnectivity = BoardConnectivity::instance();
-AHRS *ahrs = AHRS::instance(); 
-
-ChassisController *chassisController = ChassisController::instance();
-GimbalController *gimbalController = GimbalController::instance();
-ShooterController *shooterController = ShooterController::instance();
-
-BalanceController *balanceController = BalanceController::instance();
-
+extern void main_demo();
+extern void SysTick_Handler(void);
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -138,26 +113,7 @@ void EnableSystickIT(void)
   SysTick->CTRL |= SysTick_CTRL_ENABLE_Msk; // Enable SysTick
 }
 
-/**
- * @brief  系统中断，每1ms进入�?�?
- * 代码的主循环
- */
-void SysTick_Handler(void)
-{
-  HAL_IncTick();
-  // receive and update data
-  // run control loop
-  dr16->updateData();
-  bmi088->update();
-	
-  // LKmotorHandler->updateFeedback();
 
-	// chassisController->run();
-  balanceController->run();
-	
-//  GMmotorHandler->sendControlData();
-	LKmotorHandler->sendControlData(&hcan1, &hcan2);	
-}
 
 /* USER CODE END 0 */
 
@@ -204,22 +160,7 @@ int main(void)
   MX_CRC_Init();
   MX_USB_DEVICE_Init();
   /* USER CODE BEGIN 2 */
-
-  bsp_init();
-
-  bmi088->BMI088_INIT();     
-  ist8310->init();
-	ahrs->INS_Init();
-	HAL_TIM_Base_Start_IT(&htim2);
-	
-	boardConnectivity->init();
-  remote_control_init();     
-
-  chassisController->init(); 
-  gimbalController->init();
-	shooterController->init();
-  balanceController->init();
-
+	main_demo();
   EnableSystickIT(); // 使能SysTick中断
 	LED_ALL_ON();
   /* USER CODE END 2 */

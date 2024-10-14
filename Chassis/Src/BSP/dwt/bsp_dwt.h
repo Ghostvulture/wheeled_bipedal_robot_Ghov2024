@@ -17,6 +17,11 @@
 #include "main.h"
 #include "stdint.h"
 
+#ifdef __cplusplus
+extern "C"
+{
+#endif
+	
 typedef struct
 {
     uint32_t s;
@@ -97,4 +102,7 @@ void DWT_Delay(float Delay);
  */
 void DWT_SysTimeUpdate(void);
 
+#ifdef __cplusplus
+}
+#endif
 #endif /* BSP_DWT_H_ */

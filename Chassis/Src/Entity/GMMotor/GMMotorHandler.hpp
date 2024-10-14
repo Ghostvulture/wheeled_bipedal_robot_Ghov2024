@@ -12,9 +12,7 @@
 #define GM3508_CAN_ID 0x200 ///< 控制ID范围在0x201-0x204的所有电机
 
 #ifdef __cplusplus
-extern "C"
-{
-#endif
+
 
     /**
      * @brief 电机控制类
@@ -93,8 +91,6 @@ extern "C"
         }
     };
 
-#ifdef __cplusplus
-}
-#endif
 
+#endif
 #endif // GMMOTORHANDLER_HPP

@@ -18,6 +18,10 @@
 #include "stm32f407xx.h"
 #include "arm_math.h"
 
+#ifdef __cplusplus
+extern "C"
+{
+#endif
 
 #ifndef user_malloc
 #ifdef _CMSIS_OS_H
@@ -122,4 +126,8 @@ float AverageFilter(float new_data, float *buf, uint8_t len);
 
 #define rad_format(Ang) loop_float_constrain((Ang), -PI, PI)
 
+
+#ifdef __cplusplus
+}
+#endif
 #endif

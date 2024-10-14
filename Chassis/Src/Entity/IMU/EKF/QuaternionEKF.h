@@ -14,6 +14,10 @@
 #define _QUAT_EKF_H
 #include "kalman_filter.h"
 
+#ifdef __cplusplus
+extern "C"
+{
+#endif
 /* boolean type definitions */
 #ifndef TRUE
 #define TRUE 1 /**< boolean true  */
@@ -72,4 +76,7 @@ extern float ChiSquareTestThreshold;
 void IMU_QuaternionEKF_Init(float* init_quaternion,float process_noise1, float process_noise2, float measure_noise, float lambda, float lpf);
 void IMU_QuaternionEKF_Update(float gx, float gy, float gz, float ax, float ay, float az, float dt);
 
+#ifdef __cplusplus
+}
+#endif
 #endif

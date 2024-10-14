@@ -5,6 +5,9 @@
  * @class StateMachine
  * @brief 状态机基类
  */
+ 
+#ifdef __cplusplus
+
 class StateMachine
 {
 public:
@@ -35,4 +38,8 @@ public:
     ~StateMachine() {};
 };
 
+
+
+
+#endif
 #endif // StateMachine_HPP

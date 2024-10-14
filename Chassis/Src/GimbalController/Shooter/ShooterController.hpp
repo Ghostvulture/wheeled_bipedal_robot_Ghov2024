@@ -54,7 +54,7 @@ public:
      * @note 如果需要添加新的发射机构状态，需要在此处添加。
 
      */
-    typedef enum ShooterState
+		enum ShooterState : int8_t
     {
         STATE_RELAX = 0,
         STATE_PREHEAT,

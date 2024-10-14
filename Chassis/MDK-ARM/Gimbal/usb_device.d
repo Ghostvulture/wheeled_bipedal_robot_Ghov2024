@@ -1,54 +1,64 @@
-gimbal\usb_device.o: ../USB_DEVICE/App/usb_device.c
-gimbal\usb_device.o: ../USB_DEVICE/App/usb_device.h
-gimbal\usb_device.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
-gimbal\usb_device.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h
-gimbal\usb_device.o: ../Drivers/CMSIS/Include/core_cm4.h
-gimbal\usb_device.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
-gimbal\usb_device.o: ../Drivers/CMSIS/Include/cmsis_version.h
-gimbal\usb_device.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
-gimbal\usb_device.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
-gimbal\usb_device.o: ../Drivers/CMSIS/Include/mpu_armv7.h
-gimbal\usb_device.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h
-gimbal\usb_device.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
-gimbal\usb_device.o: ../Core/Inc/stm32f4xx_hal_conf.h
-gimbal\usb_device.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h
-gimbal\usb_device.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h
-gimbal\usb_device.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
-gimbal\usb_device.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
-gimbal\usb_device.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
-gimbal\usb_device.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h
-gimbal\usb_device.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h
-gimbal\usb_device.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h
-gimbal\usb_device.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h
-gimbal\usb_device.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h
-gimbal\usb_device.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h
-gimbal\usb_device.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h
-gimbal\usb_device.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_can.h
-gimbal\usb_device.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_crc.h
-gimbal\usb_device.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h
-gimbal\usb_device.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h
-gimbal\usb_device.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h
-gimbal\usb_device.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h
-gimbal\usb_device.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c_ex.h
-gimbal\usb_device.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h
-gimbal\usb_device.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h
-gimbal\usb_device.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h
-gimbal\usb_device.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h
-gimbal\usb_device.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
-gimbal\usb_device.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
-gimbal\usb_device.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd.h
-gimbal\usb_device.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h
-gimbal\usb_device.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd_ex.h
-gimbal\usb_device.o: ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h
-gimbal\usb_device.o: ../USB_DEVICE/Target/usbd_conf.h
-gimbal\usb_device.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
-gimbal\usb_device.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
-gimbal\usb_device.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
-gimbal\usb_device.o: ../Core/Inc/main.h
-gimbal\usb_device.o: ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h
-gimbal\usb_device.o: ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h
-gimbal\usb_device.o: ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h
-gimbal\usb_device.o: ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h
-gimbal\usb_device.o: ../USB_DEVICE/App/usbd_desc.h
-gimbal\usb_device.o: ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc/usbd_cdc.h
-gimbal\usb_device.o: ../USB_DEVICE/App/usbd_cdc_if.h
+gimbal/usb_device.o: ..\USB_DEVICE\App\usb_device.c \
+  ..\USB_DEVICE\App\usb_device.h \
+  ..\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h \
+  ..\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f407xx.h \
+  ..\Drivers\CMSIS\Include\core_cm4.h \
+  ..\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h \
+  ..\Core\Inc\stm32f4xx_hal_conf.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_def.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\Legacy\stm32_hal_legacy.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc_ex.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_gpio.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_gpio_ex.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_exti.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_dma.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_dma_ex.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_cortex.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_can.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_crc.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash_ex.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash_ramfunc.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_i2c.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_i2c_ex.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pwr.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pwr_ex.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_spi.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim_ex.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_uart.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pcd.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_ll_usb.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pcd_ex.h \
+  ..\Middlewares\ST\STM32_USB_Device_Library\Core\Inc\usbd_def.h \
+  ..\USB_DEVICE\Target\usbd_conf.h ..\Core\Inc\main.h \
+  D:\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\arm_math.h \
+  D:\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\arm_math_types.h \
+  ..\Drivers\CMSIS\Include\cmsis_compiler.h \
+  D:\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\arm_math_memory.h \
+  D:\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\dsp\none.h \
+  D:\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\dsp\utils.h \
+  D:\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\dsp\basic_math_functions.h \
+  D:\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\dsp\interpolation_functions.h \
+  D:\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\dsp\bayes_functions.h \
+  D:\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\dsp\statistics_functions.h \
+  D:\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\dsp\fast_math_functions.h \
+  D:\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\dsp\matrix_functions.h \
+  D:\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\dsp\complex_math_functions.h \
+  D:\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\dsp\controller_functions.h \
+  D:\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\dsp\support_functions.h \
+  D:\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\dsp\distance_functions.h \
+  D:\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\dsp\svm_functions.h \
+  D:\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\dsp\svm_defines.h \
+  D:\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\dsp\transform_functions.h \
+  D:\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\dsp\filtering_functions.h \
+  D:\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\dsp\quaternion_math_functions.h \
+  D:\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\dsp\window_functions.h \
+  ..\Middlewares\ST\STM32_USB_Device_Library\Core\Inc\usbd_core.h \
+  ..\Middlewares\ST\STM32_USB_Device_Library\Core\Inc\usbd_ioreq.h \
+  ..\Middlewares\ST\STM32_USB_Device_Library\Core\Inc\usbd_ctlreq.h \
+  ..\USB_DEVICE\App\usbd_desc.h \
+  ..\Middlewares\ST\STM32_USB_Device_Library\Class\CDC\Inc\usbd_cdc.h \
+  ..\USB_DEVICE\App\usbd_cdc_if.h

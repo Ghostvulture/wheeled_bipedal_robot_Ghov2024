@@ -1,17 +1,28 @@
-gimbal\quaternionekf.o: ..\Src\Entity\IMU\EKF\QuaternionEKF.c
-gimbal\quaternionekf.o: ..\Src\Entity\IMU\EKF\QuaternionEKF.h
-gimbal\quaternionekf.o: ..\Src\Entity\IMU\EKF\kalman_filter.h
-gimbal\quaternionekf.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h
-gimbal\quaternionekf.o: ../Drivers/CMSIS/Include/core_cm4.h
-gimbal\quaternionekf.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
-gimbal\quaternionekf.o: ../Drivers/CMSIS/Include/cmsis_version.h
-gimbal\quaternionekf.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
-gimbal\quaternionekf.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
-gimbal\quaternionekf.o: ../Drivers/CMSIS/Include/mpu_armv7.h
-gimbal\quaternionekf.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h
-gimbal\quaternionekf.o: ../Middlewares/ST/ARM/DSP/Inc/arm_math.h
-gimbal\quaternionekf.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
-gimbal\quaternionekf.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
-gimbal\quaternionekf.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\float.h
-gimbal\quaternionekf.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\limits.h
-gimbal\quaternionekf.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+gimbal/quaternionekf.o: ..\Src\Entity\IMU\EKF\QuaternionEKF.c \
+  ..\Src\Entity\IMU\EKF\QuaternionEKF.h \
+  ..\Src\Entity\IMU\EKF\kalman_filter.h \
+  ..\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f407xx.h \
+  ..\Drivers\CMSIS\Include\core_cm4.h \
+  ..\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h \
+  D:\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\arm_math.h \
+  D:\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\arm_math_types.h \
+  ..\Drivers\CMSIS\Include\cmsis_compiler.h \
+  D:\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\arm_math_memory.h \
+  D:\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\dsp\none.h \
+  D:\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\dsp\utils.h \
+  D:\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\dsp\basic_math_functions.h \
+  D:\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\dsp\interpolation_functions.h \
+  D:\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\dsp\bayes_functions.h \
+  D:\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\dsp\statistics_functions.h \
+  D:\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\dsp\fast_math_functions.h \
+  D:\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\dsp\matrix_functions.h \
+  D:\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\dsp\complex_math_functions.h \
+  D:\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\dsp\controller_functions.h \
+  D:\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\dsp\support_functions.h \
+  D:\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\dsp\distance_functions.h \
+  D:\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\dsp\svm_functions.h \
+  D:\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\dsp\svm_defines.h \
+  D:\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\dsp\transform_functions.h \
+  D:\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\dsp\filtering_functions.h \
+  D:\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\dsp\quaternion_math_functions.h \
+  D:\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\dsp\window_functions.h

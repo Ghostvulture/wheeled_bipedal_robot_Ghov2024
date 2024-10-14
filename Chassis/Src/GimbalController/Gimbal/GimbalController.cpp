@@ -3,6 +3,12 @@
 extern CAN_HandleTypeDef hcan1;
 extern CAN_HandleTypeDef hcan2;
 
+
+
+
+
+
+
 void GimbalController::init()
 {
     YawMotor.controlMode = GM6020::RELAX_MODE;

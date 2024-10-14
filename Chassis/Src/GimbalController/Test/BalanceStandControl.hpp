@@ -10,9 +10,16 @@
 #include "GM2006.hpp"
 #include "AHRS.hpp"
 #include "LK9025.hpp"
-#include "odometer.hpp"
 
 #include "Math.hpp"
+
+#include "msgs.h"
+#include "balance_task.hpp"
+#include "kalman_filter.h"
+
+#include "arm_math.h"
+
+#define WHEEL_RADIUS 0.095f
 
 /**
  * @class BalanceStandControl
@@ -27,10 +34,8 @@ public:
      * @note member(arg) 初始化列表，用于在进入构造函数体之前对成员变量进行初始化
      */
     BalanceStandControl(LK9025 *LMotor,
-                         LK9025 *RMotor,
-                         Odometer *odometer) : LMotor(LMotor),
-                                           RMotor(RMotor),
-                                           odometer(odometer) {};
+                         LK9025 *RMotor) : LMotor(LMotor),
+                                           RMotor(RMotor){};
 
     /**
      * @brief 析构函数。
@@ -42,7 +47,8 @@ public:
      */
     LK9025 *LMotor;
     LK9025 *RMotor;
-    Odometer *odometer;
+    Msg_Odometer_t odometer_msg;
+    cVelFusionKF kf_vel;
 
     /**
      * @brief 遥控器

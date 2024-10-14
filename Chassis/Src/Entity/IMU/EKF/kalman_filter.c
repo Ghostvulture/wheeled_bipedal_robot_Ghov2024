@@ -243,6 +243,17 @@ void Kalman_Filter_Init(KalmanFilter_t *kf, uint8_t xhatSize, uint8_t uSize, uin
     memset(kf->K_data, 0, sizeof_float * xhatSize * zSize);
     Matrix_Init(&kf->K, kf->xhatSize, kf->zSize, (float *)kf->K_data);
 
+    //Chi-Squre Test
+	kf->ek_data = (float *)user_malloc(sizeof_float * zSize);
+	kf->ekT_data = (float *)user_malloc(sizeof_float * zSize);
+	kf->rk_data = (float *)user_malloc(sizeof_float);
+	memset(kf->ek_data, 0, sizeof_float * zSize);
+	memset(kf->ekT_data, 0, sizeof_float * zSize);
+	memset(kf->rk_data, 0, sizeof_float);
+	Matrix_Init(&kf->ek, kf->zSize, 1, (float *)kf->ek_data);
+	Matrix_Init(&kf->ekT, 1,kf->zSize , (float *)kf->ekT_data);
+	Matrix_Init(&kf->rk, 1, 1, (float *)kf->rk_data);
+
     kf->S_data = (float *)user_malloc(sizeof_float * kf->xhatSize * kf->xhatSize);
     kf->temp_matrix_data = (float *)user_malloc(sizeof_float * kf->xhatSize * kf->xhatSize);
     kf->temp_matrix_data1 = (float *)user_malloc(sizeof_float * kf->xhatSize * kf->xhatSize);
@@ -477,4 +488,101 @@ static void H_K_R_Adjustment(KalmanFilter_t *kf)
     kf->K.numRows = kf->xhatSize;
     kf->K.numCols = kf->MeasurementValidNum;
     kf->z.numRows = kf->MeasurementValidNum;
+}
+
+void VelFusionKF_Update(KalmanFilter_t *kf)
+{
+
+	memcpy(kf->z_data, kf->MeasuredVector, sizeof_float * kf->zSize);
+	memset(kf->MeasuredVector, 0, sizeof_float * kf->zSize);	
+  //1. xhat'(k)= F xhat(k-1)
+	if (!kf->SkipEq1)
+		kf->MatStatus = Matrix_Multiply(&kf->F, &kf->xhat, &kf->xhatminus);
+  
+	// 预测更新
+  //2. P'(k) = F P(k-1) FT + Q
+	if (!kf->SkipEq2)
+	{
+		kf->MatStatus = Matrix_Transpose(&kf->F,&kf->FT);
+		kf->MatStatus = Matrix_Multiply(&kf->F, &kf->P, &kf->Pminus);
+		kf->temp_matrix.numRows = kf->Pminus.numRows;
+		kf->temp_matrix.numCols = kf->FT.numCols;
+		kf->MatStatus = Matrix_Multiply(&kf->Pminus, &kf->FT, &kf->temp_matrix); //temp_matrix = F P(k-1) FT
+		kf->MatStatus = Matrix_Add(&kf->temp_matrix, &kf->Q, &kf->Pminus);
+		//Chi-Squre Test  rk=ekT(Hk Pkmin Hkt +Rk)-1ek
+		kf->MatStatus	=	Matrix_Multiply(&kf->H,&kf->xhatminus,&kf->ek);
+		kf->MatStatus	=	Matrix_Subtract(&kf->z,&kf->ek,&kf->ek);
+		kf->MatStatus	=	Matrix_Transpose(&kf->ek,&kf->ekT);
+		
+		kf->temp_matrix.numRows = kf->H.numRows;
+		kf->temp_matrix.numCols = kf->Pminus.numCols;
+		kf->temp_matrix1.numRows = kf->temp_matrix.numRows;
+		kf->temp_matrix1.numCols = kf->HT.numCols;
+		kf->MatStatus	=	Matrix_Multiply(&kf->H,&kf->Pminus,&kf->temp_matrix);
+		kf->MatStatus	=	Matrix_Multiply(&kf->temp_matrix,&kf->HT,&kf->temp_matrix1);
+		kf->MatStatus	=	Matrix_Add(&kf->temp_matrix1,&kf->R,&kf->temp_matrix1);
+		kf->temp_matrix.numRows = kf->temp_matrix1.numRows;
+		kf->temp_matrix.numCols = kf->temp_matrix1.numCols;
+		kf->MatStatus	=	Matrix_Inverse(&kf->temp_matrix1, &kf->temp_matrix);
+		
+		kf->temp_vector.numRows = 1;
+		kf->temp_vector.numCols = kf->temp_matrix.numCols;
+		kf->MatStatus	= Matrix_Multiply(&kf->ekT,&kf->temp_matrix,&kf->temp_vector);
+		kf->MatStatus	= Matrix_Multiply(&kf->temp_vector,&kf->ek,&kf->rk);
+	}
+	
+   // 量测更新
+  //3. K(k) = P'(k) HT / (H P'(k) HT + R)
+	if (!kf->SkipEq3)
+	{
+		kf->MatStatus = Matrix_Transpose(&kf->H, &kf->HT); 
+		kf->temp_matrix.numRows = kf->H.numRows;
+		kf->temp_matrix.numCols = kf->Pminus.numCols;
+		kf->MatStatus = Matrix_Multiply(&kf->H, &kf->Pminus, &kf->temp_matrix); //temp_matrix = H·P'(k)
+		kf->temp_matrix1.numRows = kf->temp_matrix.numRows;
+		kf->temp_matrix1.numCols = kf->HT.numCols;
+		kf->MatStatus = Matrix_Multiply(&kf->temp_matrix, &kf->HT, &kf->temp_matrix1); //temp_matrix1 = H·P'(k)·HT
+		kf->S.numRows = kf->R.numRows;
+		kf->S.numCols = kf->R.numCols;
+		kf->MatStatus = Matrix_Add(&kf->temp_matrix1, &kf->R, &kf->S); //S = H P'(k) HT + R
+		kf->MatStatus = Matrix_Inverse(&kf->S, &kf->temp_matrix1);     //temp_matrix1 = inv(H·P'(k)·HT + R)
+		kf->temp_matrix.numRows = kf->Pminus.numRows;
+		kf->temp_matrix.numCols = kf->HT.numCols;
+		kf->MatStatus = Matrix_Multiply(&kf->Pminus, &kf->HT, &kf->temp_matrix); //temp_matrix = P'(k)·HT
+		kf->MatStatus = Matrix_Multiply(&kf->temp_matrix, &kf->temp_matrix1, &kf->K);
+	}
+  //4. xhat(k) = xhat'(k) + K(k) (z(k) - H xhat'(k))
+	if (!kf->SkipEq4)
+	{
+			kf->temp_vector.numRows = kf->H.numRows;
+			kf->temp_vector.numCols = 1;
+			kf->MatStatus = Matrix_Multiply(&kf->H, &kf->xhatminus, &kf->temp_vector); //temp_vector = H xhat'(k)
+			kf->temp_vector1.numRows = kf->z.numRows;
+			kf->temp_vector1.numCols = 1;
+			kf->MatStatus = Matrix_Subtract(&kf->z, &kf->temp_vector, &kf->temp_vector1); //temp_vector1 = z(k) - H·xhat'(k)
+			kf->temp_vector.numRows = kf->K.numRows;
+			kf->temp_vector.numCols = 1;
+			kf->MatStatus = Matrix_Multiply(&kf->K, &kf->temp_vector1, &kf->temp_vector); //temp_vector = K(k)·(z(k) - H·xhat'(k))
+			kf->MatStatus = Matrix_Add(&kf->xhatminus, &kf->temp_vector, &kf->xhat);
+	}
+
+  //5. P(k) = (1-K(k)H)P'(k) ==> P(k) = P'(k)-K(k)·H·P'(k)
+	if (!kf->SkipEq5)
+	{
+			kf->temp_matrix.numRows = kf->K.numRows;
+			kf->temp_matrix.numCols = kf->H.numCols;
+			kf->temp_matrix1.numRows = kf->temp_matrix.numRows;
+			kf->temp_matrix1.numCols = kf->Pminus.numCols;
+			kf->MatStatus = Matrix_Multiply(&kf->K, &kf->H, &kf->temp_matrix);                 //temp_matrix = K(k)·H
+			kf->MatStatus = Matrix_Multiply(&kf->temp_matrix, &kf->Pminus, &kf->temp_matrix1); //temp_matrix1 = K(k)·H·P'(k)
+			kf->MatStatus = Matrix_Subtract(&kf->Pminus, &kf->temp_matrix1, &kf->P);
+	}
+}//CA模型
+
+void VelFusionKF_Reset(KalmanFilter_t *kf)//卡尔曼滤波器复位
+{
+	memset(kf->xhat.pData, 0, sizeof(float) * kf->xhat.numRows);
+	memset(kf->xhatminus.pData, 0, sizeof(float) * kf->xhatminus.numRows);
+//	memcpy(F->P.pData,Pminus_data,sizeof(Pminus_data));
+	memset(kf->P.pData, 0, sizeof(float) * kf->P.numRows*kf->P.numRows);
 }

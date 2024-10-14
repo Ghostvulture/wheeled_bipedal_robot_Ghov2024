@@ -3,6 +3,10 @@
 
 #include "main.h"
 
+#ifdef __cplusplus
+extern "C"
+{
+#endif
 /**
  * @brief  PWM初始化
  */
@@ -34,4 +38,7 @@ void PWM_SetPeriod(TIM_HandleTypeDef *htim, float period);
  */
 void PWM_SetDutyRatio(TIM_HandleTypeDef *htim, float dutyratio, uint32_t channel);
 
+#ifdef __cplusplus
+}
+#endif
 #endif // !BSP_PWM_H

@@ -9,12 +9,12 @@ License Information: xy LUO, hkustgz, LIC=SDA0P-MN2VF-9UK4U-S81B4-YTS5F-RK3I8
  
 Tool Versions:
 Toolchain:       MDK-ARM Plus  Version: 5.40.0.3
-Toolchain Path:  D:\Keil_v5\ARM\ARMCC\Bin
-C Compiler:      Armcc.exe V5.06 update 7 (build 960)
-Assembler:       Armasm.exe V5.06 update 7 (build 960)
-Linker/Locator:  ArmLink.exe V5.06 update 7 (build 960)
-Library Manager: ArmAr.exe V5.06 update 7 (build 960)
-Hex Converter:   FromElf.exe V5.06 update 7 (build 960)
+Toolchain Path:  D:\Keil_v5\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.22
+Assembler:       Armasm.exe V6.22
+Linker/Locator:  ArmLink.exe V6.22
+Library Manager: ArmAr.exe V6.22
+Hex Converter:   FromElf.exe V6.22
 CPU DLL:         SARMCM3.DLL V5.40.0.3
 Dialog DLL:      DCM.DLL V1.17.5.0
 Target DLL:      CMSIS_AGDI.dll V1.33.18.0
@@ -22,243 +22,120 @@ Dialog DLL:      TCM.DLL V1.56.4.0
  
 <h2>Project:</h2>
 D:\Aprojects\RM\test0603\INFRASTRY_TEST\Chassis\MDK-ARM\Gimbal.uvprojx
-Project File Date:  08/27/2024
+Project File Date:  10/14/2024
 
 <h2>Output:</h2>
-*** Using Compiler 'V5.06 update 7 (build 960)', folder: 'D:\Keil_v5\ARM\ARMCC\Bin'
+*** Using Compiler 'V6.22', folder: 'D:\Keil_v5\ARM\ARMCLANG\Bin'
 Build target 'Gimbal'
-compiling BalanceController.cpp...
-../Src/Entity/GMMotor/GM6020.hpp(33): warning:  #1300-D: setOutput inherits implicit virtual
-      void setOutput() override;
-../Src/Entity/GMMotor/GM3508.hpp(41): warning:  #1300-D: setOutput inherits implicit virtual
-      void setOutput() override;
-../Src/Entity/GMMotor/GM2006.hpp(31): warning:  #1300-D: setOutput inherits implicit virtual
-      void setOutput() override;
-..\Src\Entity\LKMotor\LK9025.hpp(26): warning:  #1300-D: setOutput inherits implicit virtual
-      void setOutput() override;
-..\Src\GimbalController\Test\BalanceSpeedControl.hpp(57): warning:  #1300-D: init inherits implicit virtual
-      void init() override;
-..\Src\GimbalController\Test\BalanceSpeedControl.hpp(63): warning:  #1300-D: enter inherits implicit virtual
-      void enter() override;
-..\Src\GimbalController\Test\BalanceSpeedControl.hpp(69): warning:  #1300-D: execute inherits implicit virtual
-      void execute() override;
-..\Src\GimbalController\Test\BalanceSpeedControl.hpp(74): warning:  #1300-D: exit inherits implicit virtual
-      void exit() override;
-..\Src\GimbalController\Test\BalanceSpeedControl.hpp(80): warning:  #1300-D: run inherits implicit virtual
-      void run() override;
-..\Src\GimbalController\Test\BalanceStateRelax.hpp(46): warning:  #1300-D: init inherits implicit virtual
-      void init() override;
-..\Src\GimbalController\Test\BalanceStateRelax.hpp(52): warning:  #1300-D: enter inherits implicit virtual
-      void enter() override;
-..\Src\GimbalController\Test\BalanceStateRelax.hpp(60): warning:  #1300-D: execute inherits implicit virtual
-      void execute() override;
-..\Src\GimbalController\Test\BalanceStateRelax.hpp(65): warning:  #1300-D: exit inherits implicit virtual
-      void exit() override;
-..\Src\GimbalController\Test\BalanceStateRelax.hpp(71): warning:  #1300-D: run inherits implicit virtual
-      void run() override;
-..\Src\GimbalController\Test\BalanceRemoteControl.hpp(64): warning:  #1300-D: init inherits implicit virtual
-      void init() override;
-..\Src\GimbalController\Test\BalanceRemoteControl.hpp(70): warning:  #1300-D: enter inherits implicit virtual
-      void enter() override;
-..\Src\GimbalController\Test\BalanceRemoteControl.hpp(78): warning:  #1300-D: execute inherits implicit virtual
-      void execute() override;
-..\Src\GimbalController\Test\BalanceRemoteControl.hpp(83): warning:  #1300-D: exit inherits implicit virtual
-      void exit() override;
-..\Src\GimbalController\Test\BalanceRemoteControl.hpp(89): warning:  #1300-D: run inherits implicit virtual
-      void run() override;
-..\Src\GimbalController\Test\BalanceStandControl.hpp(83): warning:  #1300-D: init inherits implicit virtual
-      void init() override;
-..\Src\GimbalController\Test\BalanceStandControl.hpp(89): warning:  #1300-D: enter inherits implicit virtual
-      void enter() override;
-..\Src\GimbalController\Test\BalanceStandControl.hpp(95): warning:  #1300-D: execute inherits implicit virtual
-      void execute() override;
-..\Src\GimbalController\Test\BalanceStandControl.hpp(100): warning:  #1300-D: exit inherits implicit virtual
-      void exit() override;
-..\Src\GimbalController\Test\BalanceStandControl.hpp(106): warning:  #1300-D: run inherits implicit virtual
-      void run() override;
-..\Src\GimbalController\Test\BalanceController.hpp(148): warning:  #1300-D: run inherits implicit virtual
-      void run() override;
-..\Src\GimbalController\Test\BalanceController.hpp(127): warning:  #1299-D: members and base-classes will be initialized in declaration order, not in member initialisation list order
-                           odometer(LMotor, RMotor)
-..\Src\GimbalController\Test\BalanceController.cpp: 26 warnings, 0 errors
-compiling BalanceStandControl.cpp...
-../Src/Entity/GMMotor/GM6020.hpp(33): warning:  #1300-D: setOutput inherits implicit virtual
-      void setOutput() override;
-../Src/Entity/GMMotor/GM3508.hpp(41): warning:  #1300-D: setOutput inherits implicit virtual
-      void setOutput() override;
-../Src/Entity/GMMotor/GM2006.hpp(31): warning:  #1300-D: setOutput inherits implicit virtual
-      void setOutput() override;
-..\Src\Entity\LKMotor\LK9025.hpp(26): warning:  #1300-D: setOutput inherits implicit virtual
-      void setOutput() override;
-..\Src\GimbalController\Test\BalanceStandControl.hpp(83): warning:  #1300-D: init inherits implicit virtual
-      void init() override;
-..\Src\GimbalController\Test\BalanceStandControl.hpp(89): warning:  #1300-D: enter inherits implicit virtual
-      void enter() override;
-..\Src\GimbalController\Test\BalanceStandControl.hpp(95): warning:  #1300-D: execute inherits implicit virtual
-      void execute() override;
-..\Src\GimbalController\Test\BalanceStandControl.hpp(100): warning:  #1300-D: exit inherits implicit virtual
-      void exit() override;
-..\Src\GimbalController\Test\BalanceStandControl.hpp(106): warning:  #1300-D: run inherits implicit virtual
-      void run() override;
-..\Src\GimbalController\Test\BalanceStandControl.cpp(100): warning:  #1035-D: single-precision operand implicitly converted to double-precision
-      if (Vx < 0.1 && Vx > -0.1)
-..\Src\GimbalController\Test\BalanceStandControl.cpp(106): warning:  #1035-D: single-precision operand implicitly converted to double-precision
-      LMotor->positionPid.ref = RMotor->positionPid.ref = Motor_DisplacementRef / 0.1; //轮子半径�?0.1m，位�?->弧度制转�?
-..\Src\GimbalController\Test\BalanceStandControl.cpp(107): warning:  #1035-D: single-precision operand implicitly converted to double-precision
-      LMotor->positionPid.fdb = RMotor->positionPid.fdb = odometer->odometry.x / 0.1;
-..\Src\GimbalController\Test\BalanceStandControl.cpp(133): warning:  #1-D: last line of file ends without a newline
-  }
-..\Src\GimbalController\Test\BalanceStandControl.cpp: 13 warnings, 0 errors
+compiling stm32f4xx_it.c...
+compiling stm32f4xx_hal_rcc_ex.c...
+compiling stm32f4xx_hal_flash_ex.c...
+compiling stm32f4xx_hal_flash_ramfunc.c...
 compiling main.c...
-../Src/GimbalController/Chassis/ChassisStateRemoteControl.hpp(27): warning:  #1300-D: init inherits implicit virtual
-      void init() override;
-../Src/GimbalController/Chassis/ChassisStateRemoteControl.hpp(32): warning:  #1300-D: enter inherits implicit virtual
-      void enter() override;
-../Src/GimbalController/Chassis/ChassisStateRemoteControl.hpp(37): warning:  #1300-D: execute inherits implicit virtual
-      void execute() override;
-../Src/GimbalController/Chassis/ChassisStateRemoteControl.hpp(42): warning:  #1300-D: exit inherits implicit virtual
-      void exit() override;
-../Src/GimbalController/Chassis/ChassisStateRemoteControl.hpp(47): warning:  #1300-D: run inherits implicit virtual
-      void run() override;
-../Src/GimbalController/Chassis/ChassisStateRelax.hpp(23): warning:  #1300-D: init inherits implicit virtual
-      void init() override;
-../Src/GimbalController/Chassis/ChassisStateRelax.hpp(28): warning:  #1300-D: enter inherits implicit virtual
-      void enter() override;
-../Src/GimbalController/Chassis/ChassisStateRelax.hpp(33): warning:  #1300-D: execute inherits implicit virtual
-      void execute() override;
-../Src/GimbalController/Chassis/ChassisStateRelax.hpp(38): warning:  #1300-D: exit inherits implicit virtual
-      void exit() override;
-../Src/GimbalController/Chassis/ChassisStateRelax.hpp(43): warning:  #1300-D: run inherits implicit virtual
-      void run() override;
-../Src/GimbalController/Chassis/ChassisStateRotate.hpp(26): warning:  #1300-D: init inherits implicit virtual
-      void init() override;
-../Src/GimbalController/Chassis/ChassisStateRotate.hpp(31): warning:  #1300-D: enter inherits implicit virtual
-      void enter() override;
-../Src/GimbalController/Chassis/ChassisStateRotate.hpp(36): warning:  #1300-D: execute inherits implicit virtual
-      void execute() override;
-../Src/GimbalController/Chassis/ChassisStateRotate.hpp(41): warning:  #1300-D: exit inherits implicit virtual
-      void exit() override;
-../Src/GimbalController/Chassis/ChassisStateRotate.hpp(46): warning:  #1300-D: run inherits implicit virtual
-      void run() override;
-../Src/GimbalController/Chassis/ChassisStateFPS.hpp(31): warning:  #1300-D: init inherits implicit virtual
-      void init() override;
-../Src/GimbalController/Chassis/ChassisStateFPS.hpp(36): warning:  #1300-D: enter inherits implicit virtual
-      void enter() override;
-../Src/GimbalController/Chassis/ChassisStateFPS.hpp(41): warning:  #1300-D: execute inherits implicit virtual
-      void execute() override;
-../Src/GimbalController/Chassis/ChassisStateFPS.hpp(46): warning:  #1300-D: exit inherits implicit virtual
-      void exit() override;
-../Src/GimbalController/Chassis/ChassisStateFPS.hpp(51): warning:  #1300-D: run inherits implicit virtual
-      void run() override;
-../Src/GimbalController/Chassis/ChassisController.hpp(70): warning:  #375-D: declaration requires a typedef name
-      };
-../Src/GimbalController/Chassis/ChassisController.hpp(102): warning:  #1300-D: run inherits implicit virtual
-      void run() override;
-../Src/Entity/GMMotor/GM6020.hpp(33): warning:  #1300-D: setOutput inherits implicit virtual
-      void setOutput() override;
-../Src/Entity/GMMotor/GM3508.hpp(41): warning:  #1300-D: setOutput inherits implicit virtual
-      void setOutput() override;
-../Src/Entity/GMMotor/GM2006.hpp(31): warning:  #1300-D: setOutput inherits implicit virtual
-      void setOutput() override;
-../Src/GimbalController/Gimbal/GimbalStateRemoteControl.hpp(91): warning:  #1300-D: init inherits implicit virtual
-      void init() override;
-../Src/GimbalController/Gimbal/GimbalStateRemoteControl.hpp(97): warning:  #1300-D: enter inherits implicit virtual
-      void enter() override;
-../Src/GimbalController/Gimbal/GimbalStateRemoteControl.hpp(103): warning:  #1300-D: execute inherits implicit virtual
-      void execute() override;
-../Src/GimbalController/Gimbal/GimbalStateRemoteControl.hpp(108): warning:  #1300-D: exit inherits implicit virtual
-      void exit() override;
-../Src/GimbalController/Gimbal/GimbalStateRemoteControl.hpp(114): warning:  #1300-D: run inherits implicit virtual
-      void run() override;
-../Src/GimbalController/Gimbal/GimbalStateSearch.hpp(65): warning:  #1300-D: init inherits implicit virtual
-      void init() override;
-../Src/GimbalController/Gimbal/GimbalStateSearch.hpp(70): warning:  #1300-D: enter inherits implicit virtual
-      void enter() override;
-../Src/GimbalController/Gimbal/GimbalStateSearch.hpp(75): warning:  #1300-D: execute inherits implicit virtual
-      void execute() override;
-../Src/GimbalController/Gimbal/GimbalStateSearch.hpp(80): warning:  #1300-D: exit inherits implicit virtual
-      void exit() override;
-../Src/GimbalController/Gimbal/GimbalStateSearch.hpp(85): warning:  #1300-D: run inherits implicit virtual
-      void run() override;
-../Src/GimbalController/Gimbal/GimbalStateRelax.hpp(48): warning:  #1300-D: init inherits implicit virtual
-      void init() override;
-../Src/GimbalController/Gimbal/GimbalStateRelax.hpp(54): warning:  #1300-D: enter inherits implicit virtual
-      void enter() override;
-../Src/GimbalController/Gimbal/GimbalStateRelax.hpp(62): warning:  #1300-D: execute inherits implicit virtual
-      void execute() override;
-../Src/GimbalController/Gimbal/GimbalStateRelax.hpp(67): warning:  #1300-D: exit inherits implicit virtual
-      void exit() override;
-../Src/GimbalController/Gimbal/GimbalStateRelax.hpp(73): warning:  #1300-D: run inherits implicit virtual
-      void run() override;
-../Src/GimbalController/Gimbal/GimbalStateFPS.hpp(111): warning:  #1300-D: init inherits implicit virtual
-      void init() override;
-../Src/GimbalController/Gimbal/GimbalStateFPS.hpp(117): warning:  #1300-D: enter inherits implicit virtual
-      void enter() override;
-../Src/GimbalController/Gimbal/GimbalStateFPS.hpp(125): warning:  #1300-D: execute inherits implicit virtual
-      void execute() override;
-../Src/GimbalController/Gimbal/GimbalStateFPS.hpp(130): warning:  #1300-D: exit inherits implicit virtual
-      void exit() override;
-../Src/GimbalController/Gimbal/GimbalStateFPS.hpp(136): warning:  #1300-D: run inherits implicit virtual
-      void run() override;
-../Src/GimbalController/Gimbal/GimbalController.hpp(147): warning:  #1300-D: run inherits implicit virtual
-      void run() override;
-../Src/GimbalController/Gimbal/GimbalController.hpp(125): warning:  #1299-D: members and base-classes will be initialized in declaration order, not in member initialisation list order
-                           SearchState(&YawMotor, &PitchMotor),
-../Src/GimbalController/Shooter/ShooterController.hpp(62): warning:  #375-D: declaration requires a typedef name
-      };
-../Src/GimbalController/Shooter/ShooterController.hpp(79): warning:  #1300-D: run inherits implicit virtual
-      void run() override;
-..\Src\Entity\LKMotor\LK9025.hpp(26): warning:  #1300-D: setOutput inherits implicit virtual
-      void setOutput() override;
-..\Src\GimbalController\Test\BalanceSpeedControl.hpp(57): warning:  #1300-D: init inherits implicit virtual
-      void init() override;
-..\Src\GimbalController\Test\BalanceSpeedControl.hpp(63): warning:  #1300-D: enter inherits implicit virtual
-      void enter() override;
-..\Src\GimbalController\Test\BalanceSpeedControl.hpp(69): warning:  #1300-D: execute inherits implicit virtual
-      void execute() override;
-..\Src\GimbalController\Test\BalanceSpeedControl.hpp(74): warning:  #1300-D: exit inherits implicit virtual
-      void exit() override;
-..\Src\GimbalController\Test\BalanceSpeedControl.hpp(80): warning:  #1300-D: run inherits implicit virtual
-      void run() override;
-..\Src\GimbalController\Test\BalanceStateRelax.hpp(46): warning:  #1300-D: init inherits implicit virtual
-      void init() override;
-..\Src\GimbalController\Test\BalanceStateRelax.hpp(52): warning:  #1300-D: enter inherits implicit virtual
-      void enter() override;
-..\Src\GimbalController\Test\BalanceStateRelax.hpp(60): warning:  #1300-D: execute inherits implicit virtual
-      void execute() override;
-..\Src\GimbalController\Test\BalanceStateRelax.hpp(65): warning:  #1300-D: exit inherits implicit virtual
-      void exit() override;
-..\Src\GimbalController\Test\BalanceStateRelax.hpp(71): warning:  #1300-D: run inherits implicit virtual
-      void run() override;
-..\Src\GimbalController\Test\BalanceRemoteControl.hpp(64): warning:  #1300-D: init inherits implicit virtual
-      void init() override;
-..\Src\GimbalController\Test\BalanceRemoteControl.hpp(70): warning:  #1300-D: enter inherits implicit virtual
-      void enter() override;
-..\Src\GimbalController\Test\BalanceRemoteControl.hpp(78): warning:  #1300-D: execute inherits implicit virtual
-      void execute() override;
-..\Src\GimbalController\Test\BalanceRemoteControl.hpp(83): warning:  #1300-D: exit inherits implicit virtual
-      void exit() override;
-..\Src\GimbalController\Test\BalanceRemoteControl.hpp(89): warning:  #1300-D: run inherits implicit virtual
-      void run() override;
-..\Src\GimbalController\Test\BalanceStandControl.hpp(83): warning:  #1300-D: init inherits implicit virtual
-      void init() override;
-..\Src\GimbalController\Test\BalanceStandControl.hpp(89): warning:  #1300-D: enter inherits implicit virtual
-      void enter() override;
-..\Src\GimbalController\Test\BalanceStandControl.hpp(95): warning:  #1300-D: execute inherits implicit virtual
-      void execute() override;
-..\Src\GimbalController\Test\BalanceStandControl.hpp(100): warning:  #1300-D: exit inherits implicit virtual
-      void exit() override;
-..\Src\GimbalController\Test\BalanceStandControl.hpp(106): warning:  #1300-D: run inherits implicit virtual
-      void run() override;
-..\Src\GimbalController\Test\BalanceController.hpp(148): warning:  #1300-D: run inherits implicit virtual
-      void run() override;
-..\Src\GimbalController\Test\BalanceController.hpp(127): warning:  #1299-D: members and base-classes will be initialized in declaration order, not in member initialisation list order
-                           odometer(LMotor, RMotor)
-../Core/Src/main.c: 72 warnings, 0 errors
+compiling stm32f4xx_hal_dma_ex.c...
+compiling stm32f4xx_hal_pcd_ex.c...
+compiling stm32f4xx_hal_gpio.c...
+compiling stm32f4xx_hal_flash.c...
+compiling stm32f4xx_hal_rcc.c...
+compiling stm32f4xx_hal_msp.c...
+compiling stm32f4xx_hal_pcd.c...
+compiling stm32f4xx_hal_pwr.c...
+compiling stm32f4xx_ll_usb.c...
+compiling stm32f4xx_hal_pwr_ex.c...
+compiling stm32f4xx_hal_dma.c...
+compiling stm32f4xx_hal_cortex.c...
+compiling stm32f4xx_hal.c...
+compiling stm32f4xx_hal_exti.c...
+compiling stm32f4xx_hal_crc.c...
+compiling stm32f4xx_hal_i2c_ex.c...
+compiling stm32f4xx_hal_can.c...
+compiling system_stm32f4xx.c...
+compiling buzzer.c...
+compiling stm32f4xx_hal_spi.c...
+compiling remoteControl.c...
+compiling stm32f4xx_hal_tim_ex.c...
+compiling Dr16.cpp...
+compiling BoardConnectivity.cpp...
+compiling stm32f4xx_hal_uart.c...
+compiling GM2006.cpp...
+compiling GM3508.cpp...
+compiling GM6020.cpp...
+compiling stm32f4xx_hal_i2c.c...
+compiling stm32f4xx_hal_tim.c...
+compiling LED.c...
+compiling GMMotorHandler.cpp...
+compiling BMI088.cpp...
+compiling kalman_filter.c...
+compiling IST8310.cpp...
+compiling QuaternionEKF.c...
+compiling user_lib.c...
+compiling AHRS.cpp...
+compiling bsp.c...
+compiling bsp_can.c...
+compiling LK8016.cpp...
+compiling LK9025.cpp...
+compiling bsp_dwt.c...
+compiling bsp_gpio.c...
+compiling bsp_iic.c...
+compiling LKMotorHandler.cpp...
+compiling bsp_spi.c...
+compiling bsp_pwm.c...
+compiling bsp_tim.c...
+compiling bsp_usart.c...
+compiling cpp_solution.cpp...
+compiling Pid.cpp...
+compiling Math.cpp...
+compiling GimbalStateRelax.cpp...
+compiling GimbalController.cpp...
+compiling GimbalStateRemoteControl.cpp...
+compiling GimbalStateSearch.cpp...
+compiling GimbalStateFPS.cpp...
+compiling ChassisController.cpp...
+compiling ChassisStateRelax.cpp...
+compiling ChassisStateRotate.cpp...
+compiling ChassisStateRemoteControl.cpp...
+compiling ChassisStateFPS.cpp...
+compiling ShooterController.cpp...
+compiling BayesFunctions.c...
+compiling BalanceController.cpp...
+compiling BalanceRemoteControl.cpp...
+compiling BalanceStateRelax.cpp...
+compiling BayesFunctionsF16.c...
+compiling BalanceSpeedControl.cpp...
+compiling balance_task.cpp...
+compiling BasicMathFunctionsF16.c...
+compiling BalanceStandControl.cpp...
+compiling cpp_main.cpp...
+compiling ControllerFunctions.c...
+compiling ComplexMathFunctionsF16.c...
+compiling CommonTablesF16.c...
+compiling FastMathFunctionsF16.c...
+compiling DistanceFunctionsF16.c...
+compiling BasicMathFunctions.c...
+compiling FilteringFunctionsF16.c...
+compiling ComplexMathFunctions.c...
+compiling InterpolationFunctionsF16.c...
+compiling FastMathFunctions.c...
+compiling InterpolationFunctions.c...
+compiling SVMFunctionsF16.c...
+compiling QuaternionMathFunctions.c...
+compiling CommonTables.c...
+compiling SVMFunctions.c...
+compiling DistanceFunctions.c...
+compiling StatisticsFunctionsF16.c...
+compiling SupportFunctionsF16.c...
+compiling MatrixFunctionsF16.c...
+compiling WindowFunctions.c...
+compiling SupportFunctions.c...
+compiling StatisticsFunctions.c...
+compiling TransformFunctionsF16.c...
+compiling TransformFunctions.c...
+compiling MatrixFunctions.c...
+compiling FilteringFunctions.c...
 linking...
-Program Size: Code=70024 RO-data=1228 RW-data=664 ZI-data=45640  
+Program Size: Code=83784 RO-data=3316 RW-data=392 ZI-data=46232  
 FromELF: creating hex file...
-"Gimbal\Gimbal.axf" - 0 Error(s), 111 Warning(s).
+"Gimbal\Gimbal.axf" - 0 Error(s), 0 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -268,20 +145,64 @@ Package Vendor: ARM
                 CMSIS (Common Microcontroller Software Interface Standard)
    * Component: CORE Version: 6.1.0
 
+Package Vendor: ARM
+                https://www.keil.com/pack/ARM.CMSIS-DSP.1.16.2.pack
+                ARM::CMSIS-DSP@1.16.2
+                CMSIS Embedded Compute Library
+   * Component: DSP Variant: Source Version: 1.16.2
+
 Package Vendor: Keil
-                https://www.keil.com/pack/Keil.STM32F4xx_DFP.2.17.1.pack
-                Keil::STM32F4xx_DFP@2.17.1
-                STMicroelectronics STM32F4 Series Device Support, Drivers and Examples
+                https://www.keil.com/pack/Keil.STM32F4xx_DFP.3.0.0.pack
+                Keil::STM32F4xx_DFP@3.0.0
+                STMicroelectronics STM32F4 Series Device Support
 
 <h2>Collection of Component include folders:</h2>
   ./RTE/_Gimbal
+  D:/Arm/Packs/ARM/CMSIS-DSP/1.16.2/Include
+  D:/Arm/Packs/ARM/CMSIS-DSP/1.16.2/PrivateInclude
   D:/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/Core/Include
-  D:/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include
 
 <h2>Collection of Component Files used:</h2>
 
    * Component: ARM::CMSIS:CORE@6.1.0
-Build Time Elapsed:  00:00:05
+
+   * Component: ARM::CMSIS:DSP&Source@1.16.2
+      Source file:   Source/StatisticsFunctions/StatisticsFunctions.c
+      Include file:  Include/arm_math.h
+      Include file:  Include/arm_common_tables_f16.h
+      Source file:   Source/FastMathFunctions/FastMathFunctions.c
+      Include file:  Include/arm_const_structs.h
+      Source file:   Source/CommonTables/CommonTables.c
+      Source file:   Source/ControllerFunctions/ControllerFunctions.c
+      Source file:   Source/BasicMathFunctions/BasicMathFunctions.c
+      Source file:   Source/ComplexMathFunctions/ComplexMathFunctions.c
+      Source file:   Source/BayesFunctions/BayesFunctions.c
+      Source file:   Source/DistanceFunctions/DistanceFunctions.c
+      Source file:   Source/FilteringFunctions/FilteringFunctions.c
+      Include file:  Include/arm_math_f16.h
+      Include file:  Include/arm_const_structs_f16.h
+      Include file:  Include/arm_common_tables.h
+      Source file:   Source/QuaternionMathFunctions/QuaternionMathFunctions.c
+      Source file:   Source/MatrixFunctions/MatrixFunctions.c
+      Source file:   Source/DistanceFunctions/DistanceFunctionsF16.c
+      Source file:   Source/BayesFunctions/BayesFunctionsF16.c
+      Source file:   Source/InterpolationFunctions/InterpolationFunctions.c
+      Source file:   Source/ComplexMathFunctions/ComplexMathFunctionsF16.c
+      Source file:   Source/SVMFunctions/SVMFunctions.c
+      Source file:   Source/TransformFunctions/TransformFunctions.c
+      Source file:   Source/WindowFunctions/WindowFunctions.c
+      Source file:   Source/InterpolationFunctions/InterpolationFunctionsF16.c
+      Source file:   Source/FilteringFunctions/FilteringFunctionsF16.c
+      Source file:   Source/CommonTables/CommonTablesF16.c
+      Source file:   Source/TransformFunctions/TransformFunctionsF16.c
+      Source file:   Source/SupportFunctions/SupportFunctions.c
+      Source file:   Source/MatrixFunctions/MatrixFunctionsF16.c
+      Source file:   Source/SVMFunctions/SVMFunctionsF16.c
+      Source file:   Source/StatisticsFunctions/StatisticsFunctionsF16.c
+      Source file:   Source/BasicMathFunctions/BasicMathFunctionsF16.c
+      Source file:   Source/SupportFunctions/SupportFunctionsF16.c
+      Source file:   Source/FastMathFunctions/FastMathFunctionsF16.c
+Build Time Elapsed:  00:00:12
 </pre>
 </body>
 </html>

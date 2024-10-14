@@ -14,11 +14,9 @@
 #include "LK9025.hpp"
 
 #include "BalanceSpeedControl.hpp"
-// #include "GimbalStateSearch.hpp"
 #include "BalanceStateRelax.hpp"
 #include "BalanceRemoteControl.hpp"
 #include "BalanceStandControl.hpp"
-#include "odometer.hpp"
 
 /**
  * @struct USBSendPacket
@@ -71,7 +69,6 @@ public:
     LK9025 RMotor;
     LK9025 LMotor;
 
-    Odometer odometer;
 
     /**
      * @brief 云台状态枚举。
@@ -123,8 +120,7 @@ public:
     BalanceController() : RelaxState(&LMotor,&RMotor),
                          RemoteControlState(&LMotor,&RMotor),
                          SpeedState(&LMotor,&RMotor),
-                         StandState(&LMotor,&RMotor, &odometer),
-                         odometer(LMotor, RMotor)
+                         StandState(&LMotor,&RMotor)
     {
         this->CurrentSate = STATE_RELAX;
     }

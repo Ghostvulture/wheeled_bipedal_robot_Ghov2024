@@ -849,10 +849,12 @@ interwork --depend=gimbal\startup_stm32f407xx.d -ogimbal\startup_stm32f407xx.o
 ARM Macro Assembler    Page 14 
 
 
--I.\RTE\_Gimbal -ID:\Arm\Packs\ARM\CMSIS\6.1.0\CMSIS\Core\Include -ID:\Arm\Pack
-s\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include --predefi
-ne="__UVISION_VERSION SETA 540" --predefine="STM32F407xx SETA 1" --predefine="_
-RTE_ SETA 1" --list=startup_stm32f407xx.lst startup_stm32f407xx.s
+-I.\RTE\_Gimbal -ID:\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include -ID:\Arm\Packs\ARM\
+CMSIS-DSP\1.16.2\PrivateInclude -ID:\Arm\Packs\ARM\CMSIS\6.1.0\CMSIS\Core\Inclu
+de -ID:\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\I
+nclude --predefine="__UVISION_VERSION SETA 540" --predefine="STM32F407xx SETA 1
+" --predefine="_RTE_ SETA 1" --list=startup_stm32f407xx.lst startup_stm32f407xx
+.s
 
 
 

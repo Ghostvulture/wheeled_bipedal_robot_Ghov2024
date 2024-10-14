@@ -26,7 +26,7 @@
  * limitations under the License.
  */
 
-#include "dsp/quaternion_math_functions.h"
+#include "quaternion_math_functions.h"
 #include <math.h>
 
 /**
@@ -127,21 +127,21 @@ void arm_quaternion_product_f32(const float32_t *qa,
 
 #else
 
-void arm_quaternion_product_f32(const float32_t *qa, 
-    const float32_t *qb, 
-    float32_t *qr,
-    uint32_t nbQuaternions)
-{
-   uint32_t i;
-   for(i=0; i < nbQuaternions; i++)
-   {
-     arm_quaternion_product_single_f32(qa, qb, qr);
+// void arm_quaternion_product_f32(const float32_t *qa, 
+//     const float32_t *qb, 
+//     float32_t *qr,
+//     uint32_t nbQuaternions)
+// {
+//    uint32_t i;
+//    for(i=0; i < nbQuaternions; i++)
+//    {
+//      arm_quaternion_product_single_f32(qa, qb, qr);
 
-     qa += 4;
-     qb += 4;
-     qr += 4;
-   }
-}
+//      qa += 4;
+//      qb += 4;
+//      qr += 4;
+//    }
+// }
 #endif /* defined(ARM_MATH_MVEF) && !defined(ARM_MATH_AUTOVECTORIZE) */
 
 /**

@@ -2,6 +2,17 @@
     "cmake.sourceDirectory": "D:/Aprojects/RM/standard_newcode_0823/RM_NEW_CODE-standard/RM_NEW_CODE-standard/Gimbal/Drivers/CMSIS/NN",
     "files.associations": {
         "compare": "cpp",
-        "firstorderfilter.hpp": "c"
+        "firstorderfilter.hpp": "c",
+        "kalman_filter.h": "c",
+        "quaternion_math_functions.h": "c",
+        "arm_math.h": "c",
+        "cstdint": "c",
+        "gmmotorhandler.hpp": "c",
+        "gmmotor.hpp": "c",
+        "pid.hpp": "c",
+        "math.hpp": "c",
+        "cpp_solution.hpp": "c",
+        "bsp_tim.c": "cpp",
+        "bsp_can.h": "c"
     }
 }

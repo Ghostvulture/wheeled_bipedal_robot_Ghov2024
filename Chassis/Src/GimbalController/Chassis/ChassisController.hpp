@@ -11,18 +11,18 @@
 #include "GMMotorHandler.hpp"
 #include "Dr16.hpp"
 
-/**
- * @struct Chassis_error_t
- * @brief 底盘错误结构体。
- * @param MOTOR_OFFLINE 电机离线。
- * @param MOTOR_TEMP_HIGH 电机温度过高。
- * @todo 需要在daemon中添加对应的错误处理函数。
- */
-struct Chassis_error_t
-{
-    bool MOTOR_OFFLINE = false;
-    bool MOTOR_TEMP_HIGH = false;
-};
+// /**
+//  * @struct Chassis_error_t
+//  * @brief 底盘错误结构体。
+//  * @param MOTOR_OFFLINE 电机离线。
+//  * @param MOTOR_TEMP_HIGH 电机温度过高。
+//  * @todo 需要在daemon中添加对应的错误处理函数。
+//  */
+// struct Chassis_error_t
+// {
+//     bool MOTOR_OFFLINE = false;
+//     bool MOTOR_TEMP_HIGH = false;
+// };
 
 /**
  * @class ChassisController
@@ -54,6 +54,7 @@ public:
      */
     ChassisStateFPS chassisStateFPS;
 
+
     /**
      * @brief 底盘状态枚举。
      * @note 如果需要添加新的底盘状态，需要在此处添加。
@@ -61,7 +62,7 @@ public:
      * @param STATE_RELAX 放松模式。
      * @param STATE_ROTATE 小陀螺模式。
      */
-    typedef enum ChassisState
+		 enum ChassisState : int8_t
     {
         STATE_REMOTE_CONTROL = 0,
         STATE_RELAX,

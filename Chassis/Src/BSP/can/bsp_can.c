@@ -1,19 +1,11 @@
 #include "bsp_can.h"
 #include "main.h"
 
-#ifdef __cplusplus
-extern "C"
-{
-#endif
-
 #include "BoardConnectivity.hpp"
 #include "GMMotorhandler.hpp"
 #include "LKMotorHandler.hpp"
+#include "cpp_solution.hpp"
 
-#ifdef __cplusplus
-}
-#endif
-// #include "LKMotorHandler.hpp"
 
 /*
 对于C板，有两个can。
@@ -78,7 +70,7 @@ void can_sendData(CAN_HandleTypeDef *hcan, uint32_t Id, uint8_t *msg, uint16_t l
 void can_recieveData()
 {
 }
-
+extern void can_callback_cpp(CAN_HandleTypeDef *hcan);
 /**
  * @brief CAN接收中断回调函数，所有反馈在can上的数据会在这里根据ID进行分类并处理。
  * @param hcan CAN句柄
@@ -93,30 +85,32 @@ void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)
     uint8_t rx_data[8];
     HAL_CAN_GetRxMessage(hcan, CAN_RX_FIFO0, &rx_header, rx_data);
 
-    /*-------------------------------------------------大疆电机数据-------------------------------------------------*/
-    if (rx_header.StdId >= 0x201 && rx_header.StdId <= 0x208)
-    {
-        if (hcan->Instance == CAN1)
-        {
-            GMMotorHandler::instance()->processRawData(hcan, rx_data, int(rx_header.StdId - 0x201));
-        }
-        else if (hcan->Instance == CAN2) // 处理CAN2的数据
-        {
-            GMMotorHandler::instance()->processRawData(hcan, rx_data, int(rx_header.StdId - 0x201));
-        }
-    }
-    /*--------------------------------------------------LK电机数据--------------------------------------------------*/
-		 else if (rx_header.StdId >= 0x140 && rx_header.StdId <= 0x160)
-		 {
-				 if (hcan->Instance == CAN1)
-				 {
-						 LKMotorHandler::instance()->processRawData(hcan, rx_data, int(rx_header.StdId - 0x141));
-				 }
-				 else if (hcan->Instance == CAN2) // 处理CAN2的数据
-				 {
-						 LKMotorHandler::instance()->processRawData(hcan, rx_data, int(rx_header.StdId - 0x141));
-				 }
-		 }
+    // /*-------------------------------------------------大疆电机数据-------------------------------------------------*/
+    // if (rx_header.StdId >= 0x201 && rx_header.StdId <= 0x208)
+    // {
+    //     if (hcan->Instance == CAN1)
+    //     {
+    //         GMMotorHandler::instance()->processRawData(hcan, rx_data, int(rx_header.StdId - 0x201));
+    //     }
+    //     else if (hcan->Instance == CAN2) // 处理CAN2的数据
+    //     {
+    //         GMMotorHandler::instance()->processRawData(hcan, rx_data, int(rx_header.StdId - 0x201));
+    //     }
+    // }
+    // /*--------------------------------------------------LK电机数据--------------------------------------------------*/
+    // else if (rx_header.StdId >= 0x140 && rx_header.StdId <= 0x160)
+    // {
+    //         if (hcan->Instance == CAN1)
+    //         {
+    //                 LKMotorHandler::instance()->processRawData(hcan, rx_data, int(rx_header.StdId - 0x141));
+    //         }
+    //         else if (hcan->Instance == CAN2) // 处理CAN2的数据
+    //         {
+    //                 LKMotorHandler::instance()->processRawData(hcan, rx_data, int(rx_header.StdId - 0x141));
+    //         }
+    // }
+
+    can_callback_cpp(hcan);
 
     /*--------------------------------------------------LK电机数据--------------------------------------------------*/
     // else if (rx_header.StdId >= 0xB1 && rx_header.StdId <= 0xB8) // 板件通讯信息处理
@@ -130,7 +124,6 @@ void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)
     //         BoardConnectivity::instance()->BoardConnectivity_Add2Memory(rx_data, rx_header.StdId, rx_header.DLC, BoardConnectivity::BOARD_CONNECTIVITY_CAN_2, BoardConnectivity::BOARD_CONNECTIVITY_RECEIVE);
     //     }
     // }
-    else // 未知的ID，需要进行错误处理
-    {
-    }
+
 }
+

@@ -1,102 +1,60 @@
-gimbal\main.o: ../Core/Src/main.c
-gimbal\main.o: ../Core/Inc/main.h
-gimbal\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
-gimbal\main.o: ../Core/Inc/stm32f4xx_hal_conf.h
-gimbal\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h
-gimbal\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h
-gimbal\main.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
-gimbal\main.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h
-gimbal\main.o: ../Drivers/CMSIS/Include/core_cm4.h
-gimbal\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
-gimbal\main.o: ../Drivers/CMSIS/Include/cmsis_version.h
-gimbal\main.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
-gimbal\main.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
-gimbal\main.o: ../Drivers/CMSIS/Include/mpu_armv7.h
-gimbal\main.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h
-gimbal\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
-gimbal\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
-gimbal\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
-gimbal\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h
-gimbal\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h
-gimbal\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h
-gimbal\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h
-gimbal\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h
-gimbal\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h
-gimbal\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h
-gimbal\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_can.h
-gimbal\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_crc.h
-gimbal\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h
-gimbal\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h
-gimbal\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h
-gimbal\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h
-gimbal\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c_ex.h
-gimbal\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h
-gimbal\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h
-gimbal\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h
-gimbal\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h
-gimbal\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
-gimbal\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
-gimbal\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd.h
-gimbal\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h
-gimbal\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd_ex.h
-gimbal\main.o: ../USB_DEVICE/App/usb_device.h
-gimbal\main.o: ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h
-gimbal\main.o: ../USB_DEVICE/Target/usbd_conf.h
-gimbal\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
-gimbal\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
-gimbal\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
-gimbal\main.o: ../Src/GimbalController/Chassis/ChassisController.hpp
-gimbal\main.o: ../Src/GimbalController/Controller.hpp
-gimbal\main.o: ../Src/GimbalController/Chassis/ChassisStateRemoteControl.hpp
-gimbal\main.o: ../Src/GimbalController/StateMachine.hpp
-gimbal\main.o: ../Src/Entity/Dr16/Dr16.hpp
-gimbal\main.o: ../Src/BSP/usart/bsp_usart.h
-gimbal\main.o: ../Src/Entity/Dr16/remoteControl.h
-gimbal\main.o: ../Src/Entity/board_connectivity/BoardConnectivity.hpp
-gimbal\main.o: ../Src/BSP/can/bsp_can.h
-gimbal\main.o: ../Src/Entity/GMMotor/GMMotor.hpp
-gimbal\main.o: ../Src/Utility/Pid.hpp
-gimbal\main.o: ../Src/Utility/Math.hpp
-gimbal\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
-gimbal\main.o: ../Middlewares/ST/ARM/DSP/Inc/arm_math.h
-gimbal\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\float.h
-gimbal\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\limits.h
-gimbal\main.o: ../Src/Utility/FirstOrderFilter.hpp
-gimbal\main.o: ../Src/GimbalController/Chassis/ChassisStateRelax.hpp
-gimbal\main.o: ../Src/GimbalController/Chassis/ChassisStateRotate.hpp
-gimbal\main.o: ../Src/GimbalController/Chassis/ChassisStateFPS.hpp
-gimbal\main.o: ../Src/Entity/GMMotor/GMMotorHandler.hpp
-gimbal\main.o: ../Src/GimbalController/Gimbal/GimbalController.hpp
-gimbal\main.o: ../Src/Entity/GMMotor/GM6020.hpp
-gimbal\main.o: ../Src/Entity/GMMotor/GM3508.hpp
-gimbal\main.o: ../Src/Entity/GMMotor/GM2006.hpp
-gimbal\main.o: ../Src/GimbalController/Gimbal/GimbalStateRemoteControl.hpp
-gimbal\main.o: ../Src/Entity/IMU/AHRS/AHRS.hpp
-gimbal\main.o: ../Src/Entity/IMU/BMI088/BMI088.hpp
-gimbal\main.o: ../Src/BSP/spi/bsp_spi.h
-gimbal\main.o: ../Src/BSP/dwt/bsp_dwt.h
-gimbal\main.o: ../Src/Entity/IMU/BMI088/BMI088reg.h
-gimbal\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
-gimbal\main.o: ../Src/BSP/pwm/bsp_pwm.h
-gimbal\main.o: ../Src/Entity/IMU/IST8310/IST8310.hpp
-gimbal\main.o: ../Src/BSP/iic/bsp_iic.h
-gimbal\main.o: ../Src/Entity/IMU/EKF/QuaternionEKF.h
-gimbal\main.o: ../Src/Entity/IMU/EKF/kalman_filter.h
-gimbal\main.o: ../Src/Entity/IMU/EKF/user_lib.h
-gimbal\main.o: ../Src/GimbalController/Gimbal/GimbalStateSearch.hpp
-gimbal\main.o: ../Src/GimbalController/Gimbal/GimbalStateRelax.hpp
-gimbal\main.o: ../Src/GimbalController/Gimbal/GimbalStateFPS.hpp
-gimbal\main.o: ../Src/GimbalController/Shooter/ShooterController.hpp
-gimbal\main.o: ..\Src\GimbalController\Test\BalanceController.hpp
-gimbal\main.o: ..\Src\Entity\LKMotor\LKMotorHandler.hpp
-gimbal\main.o: ..\Src\Entity\LKMotor\LKMotor.hpp
-gimbal\main.o: ..\Src\Entity\LKMotor\LK9025.hpp
-gimbal\main.o: ..\Src\GimbalController\Test\BalanceSpeedControl.hpp
-gimbal\main.o: ..\Src\GimbalController\Test\BalanceStateRelax.hpp
-gimbal\main.o: ..\Src\GimbalController\Test\BalanceRemoteControl.hpp
-gimbal\main.o: ..\Src\GimbalController\Test\BalanceStandControl.hpp
-gimbal\main.o: ..\Src\Entity\LKMotor\odometer.hpp
-gimbal\main.o: ../Src/Entity/LED/LED.h
-gimbal\main.o: ../Src/BSP/gpio/bsp_gpio.h
-gimbal\main.o: ../Src/BSP/bsp.h
-gimbal\main.o: ../Core/Inc/stm32f4xx_it.h
+gimbal/main.o: ..\Core\Src\main.c ..\Core\Inc\main.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h \
+  ..\Core\Inc\stm32f4xx_hal_conf.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_def.h \
+  ..\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h \
+  ..\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f407xx.h \
+  ..\Drivers\CMSIS\Include\core_cm4.h \
+  ..\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\Legacy\stm32_hal_legacy.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc_ex.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_gpio.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_gpio_ex.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_exti.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_dma.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_dma_ex.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_cortex.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_can.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_crc.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash_ex.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash_ramfunc.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_i2c.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_i2c_ex.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pwr.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pwr_ex.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_spi.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim_ex.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_uart.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pcd.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_ll_usb.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pcd_ex.h \
+  D:\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\arm_math.h \
+  D:\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\arm_math_types.h \
+  ..\Drivers\CMSIS\Include\cmsis_compiler.h \
+  D:\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\arm_math_memory.h \
+  D:\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\dsp\none.h \
+  D:\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\dsp\utils.h \
+  D:\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\dsp\basic_math_functions.h \
+  D:\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\dsp\interpolation_functions.h \
+  D:\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\dsp\bayes_functions.h \
+  D:\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\dsp\statistics_functions.h \
+  D:\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\dsp\fast_math_functions.h \
+  D:\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\dsp\matrix_functions.h \
+  D:\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\dsp\complex_math_functions.h \
+  D:\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\dsp\controller_functions.h \
+  D:\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\dsp\support_functions.h \
+  D:\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\dsp\distance_functions.h \
+  D:\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\dsp\svm_functions.h \
+  D:\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\dsp\svm_defines.h \
+  D:\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\dsp\transform_functions.h \
+  D:\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\dsp\filtering_functions.h \
+  D:\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\dsp\quaternion_math_functions.h \
+  D:\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\dsp\window_functions.h \
+  ..\USB_DEVICE\App\usb_device.h \
+  ..\Middlewares\ST\STM32_USB_Device_Library\Core\Inc\usbd_def.h \
+  ..\USB_DEVICE\Target\usbd_conf.h ..\Core\Inc\stm32f4xx_it.h \
+  ..\Src\GimbalController\cpp_main.hpp ..\Src\Entity\LED\LED.h \
+  ..\Src\BSP\gpio\bsp_gpio.h ..\Src\BSP\pwm\bsp_pwm.h

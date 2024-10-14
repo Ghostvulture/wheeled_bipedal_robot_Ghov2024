@@ -1,4 +1,5 @@
 #include "bsp_gpio.h"
+#include "cpp_solution.hpp"
 #include "IST8310.hpp"
 
 void gpio_init(void)
@@ -21,6 +22,6 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
     if (GPIO_Pin == IST8310_DRDY_GPIOp)
     {
-        IST8310::instance()->getMagData();
+        ist8310_getMagData();
     }
 }

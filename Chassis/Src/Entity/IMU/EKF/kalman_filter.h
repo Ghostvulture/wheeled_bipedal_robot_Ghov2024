@@ -13,6 +13,11 @@
 #ifndef __KALMAN_FILTER_H
 #define __KALMAN_FILTER_H
 
+#ifdef __cplusplus
+extern "C"
+{
+#endif
+	
 // cortex-m4 DSP lib
 /*
 #define __CC_ARM    // Keil
@@ -82,6 +87,8 @@ typedef struct kf_t
     mat R;         // measurement noise covariance matrix R
     mat K;         // kalman gain  K
     mat S, temp_matrix, temp_matrix1, temp_vector, temp_vector1;
+    mat ek,ekT;
+	mat rk;
 
     int8_t MatStatus;
 
@@ -106,6 +113,10 @@ typedef struct kf_t
     float *R_data;
     float *K_data;
     float *S_data, *temp_matrix_data, *temp_matrix_data1, *temp_vector_data, *temp_vector_data1;
+    //add for test
+    float *ek_data;
+	float *ekT_data;
+	float *rk_data;
 } KalmanFilter_t;
 
 extern uint16_t sizeof_float, sizeof_double;
@@ -119,4 +130,12 @@ void Kalman_Filter_xhatUpdate(KalmanFilter_t *kf);
 void Kalman_Filter_P_Update(KalmanFilter_t *kf);
 float *Kalman_Filter_Update(KalmanFilter_t *kf);
 
+void VelFusionKF_Update(KalmanFilter_t *kf);
+void VelFusionKF_Reset(KalmanFilter_t *kf);
+
+
+#ifdef __cplusplus
+}
+#endif
+	
 #endif //__KALMAN_FILTER_H

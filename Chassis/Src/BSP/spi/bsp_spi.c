@@ -6,10 +6,12 @@ void spi_init()
 
 void spi_sendData(SPI_HandleTypeDef *hspi, uint8_t *data, uint8_t len, SPI_WORK_MODE mode)
 {
+		
     switch (mode)
     {
     case SPI_BLOCK_MODE: // 阻塞模式
-        uint8_t pTxData;
+		{
+			uint8_t pTxData;
         for (int i = 0; i < len; i++)
         {
             pTxData = data[i];
@@ -17,6 +19,7 @@ void spi_sendData(SPI_HandleTypeDef *hspi, uint8_t *data, uint8_t len, SPI_WORK_
             while (HAL_SPI_GetState(hspi) == HAL_SPI_STATE_BUSY_TX) // 等待发送完成，这样的设计可能不需要，也可能锁死，需要测试
                 ;
         }
+		}
         break;
 
     case SPI_IT_MODE: // 中断模式
@@ -37,7 +40,8 @@ void spi_readData(SPI_HandleTypeDef *hspi, uint8_t *pData, uint8_t len, SPI_WORK
     switch (mode)
     {
     case SPI_BLOCK_MODE: // 阻塞模式
-        uint8_t pRxData;
+		{
+				uint8_t pRxData;
 
         for (int i = 0; i < len; i++)
         {
@@ -47,7 +51,7 @@ void spi_readData(SPI_HandleTypeDef *hspi, uint8_t *pData, uint8_t len, SPI_WORK
             pData[i] = pRxData;
         }
         break;
-
+			}
     case SPI_IT_MODE: // 中断模式
         HAL_SPI_Receive_IT(hspi, pData, len);
         break;

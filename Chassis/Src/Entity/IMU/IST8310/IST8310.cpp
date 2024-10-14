@@ -2,6 +2,11 @@
 
 IST8310::IST8310()
 {
+    // 在构造函数中初始化 ist8310_selfTest
+    ist8310_selfTest.IST8310_CHIP_ID_ERR = true;
+    ist8310_selfTest.IST8310_CONFIG_ERR = true;
+    ist8310_selfTest.IST8310_CONFIG_ERR_CODE = 0x00;
+    ist8310_selfTest.IST8310_INIT_ERR = true;
 }
 
 IST8310::~IST8310()

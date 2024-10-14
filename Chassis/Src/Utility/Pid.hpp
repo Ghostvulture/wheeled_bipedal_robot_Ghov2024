@@ -3,9 +3,12 @@
 
 #include "Math.hpp"
 
+
 /**
  * @brief Proportion integration differentiation control algorithm
  */
+#ifdef __cplusplus
+
 class Pid
 {
 public:
@@ -123,4 +126,5 @@ public:
     }
 };
 
+#endif
 #endif

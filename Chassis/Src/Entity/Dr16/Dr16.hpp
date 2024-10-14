@@ -5,6 +5,7 @@
 #include "bsp_usart.h"
 #include "remoteControl.h"
 
+
 /*------------------------------------类定义------------------------------------*/
 
 /**
@@ -13,6 +14,8 @@
  *
  * 该类封装了遥控器操作，包括遥控器按键和摇杆的数据读取与处理。
  */
+#ifdef __cplusplus
+
 class Dr16
 {
 public:
@@ -154,4 +157,5 @@ public:
     }
 };
 
+#endif
 #endif // DR16_HPP

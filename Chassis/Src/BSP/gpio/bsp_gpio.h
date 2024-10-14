@@ -3,6 +3,10 @@
 
 #include "main.h"
 
+#ifdef __cplusplus
+extern "C"
+{
+#endif
 void gpio_init(void);
 
 /**
@@ -12,4 +16,7 @@ void gpio_init(void);
 */
 //GPIO_PinState gpio_pin_read(GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin);
 
+#ifdef __cplusplus
+}
+#endif
 #endif // _GPIO_H

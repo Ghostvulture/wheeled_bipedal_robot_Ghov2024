@@ -11,6 +11,9 @@
  * 该类实现了电机的各种控制模式，包括速度、位置和基于IMU的控制。
  * 它还负责处理电机反馈数据和执行PID控制。
  */
+
+#ifdef __cplusplus
+
 class GMMotor
 {
 public:
@@ -118,4 +121,6 @@ public:
     }
 };
 
+
+#endif
 #endif // MOTOR_HPP
