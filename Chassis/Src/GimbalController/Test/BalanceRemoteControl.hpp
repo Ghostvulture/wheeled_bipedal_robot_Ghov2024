@@ -10,6 +10,7 @@
 #include "GM3508.hpp"
 #include "GM2006.hpp"
 #include "LK9025.hpp"
+#include "LK8016.hpp"
 #include "Pid.hpp"
 #include "AHRS.hpp"
 
@@ -31,8 +32,10 @@ public:
      * @param PitchMotor 云台Pitch轴电机。
      */
     BalanceRemoteControl(LK9025 *LMotor,
-                         LK9025 *RMotor) : LMotor(LMotor),
-                                           RMotor(RMotor) {};
+                         LK9025 *RMotor,
+                         LK8016 *RD) : LMotor(LMotor),
+                                       RMotor(RMotor),
+                                       RD(RD) {};
 
     /**
      * @brief 析构函数。
@@ -44,12 +47,14 @@ public:
      */
     LK9025 *LMotor;
     LK9025 *RMotor;
+    LK8016 *RD;
 
     /**
      * @brief pid结构体。
      */
     Pid LK9025SpeedPid;///< 速度环PID
     Pid LK9025PositionPid;///< 位置环PID
+    Pid LK8016PositionPid;///< 位置环PID
 
     /**
      * @brief Yaw轴电机的位置或者速度设定。

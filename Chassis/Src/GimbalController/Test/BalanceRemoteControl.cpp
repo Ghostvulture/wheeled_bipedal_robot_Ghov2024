@@ -20,6 +20,12 @@ void BalanceRemoteControl::init()
     LK9025PositionPid.maxIOut = 3;
     LK9025PositionPid.maxOut = 15000;
 
+    LK8016PositionPid.kp = 150.0f;
+    LK8016PositionPid.ki = 0.0f;
+    LK8016PositionPid.kd = 0.0f;
+    LK8016PositionPid.maxIOut = 3;
+    LK8016PositionPid.maxOut = 15000;
+
     /*-----------------------------------------左右轮分别初始化-----------------------------------------*/
     LMotor->controlMode = LK9025::POS_MODE; 
     LMotor->speedPid = LK9025SpeedPid;
@@ -32,13 +38,23 @@ void BalanceRemoteControl::init()
     RMotor->positionPid = LK9025PositionPid;
     RMotor->speedPid.Clear();
     RMotor->positionPid.Clear();
+
+    RD->controlMode = LK9025::POS_MODE; 
+    RD->speedPid = LK8016PositionPid;
+    RD->positionPid = LK8016PositionPid;
+    RD->speedPid.Clear();
+    RD->positionPid.Clear();
     
 
-    LMotor->positionSet = 0;
-    RMotor->positionSet = 0;
+
+    RD->positionSet = 0;
+
+    LMotor->controlMode = LK9025::RELAX_MODE;
+    RMotor->controlMode = LK9025::RELAX_MODE;
 
     LMotor->setOutput();
     RMotor->setOutput();
+    RD->setOutput();
 
 }
 
@@ -55,47 +71,46 @@ void BalanceRemoteControl::enter()
     {
         Motor_PositionSet += Math::PiX2;
     }
+		RD->positionSet = 0.43;
+
 }
 
 void BalanceRemoteControl::execute()
 {
 
 
-    // 外环控制，位置环控制
-    LMotor->positionSet = RMotor->positionSet = Motor_PositionSet;
+    // // 外环控制，位置环控制
+    // LMotor->positionSet = RMotor->positionSet = Motor_PositionSet;
 
-    LMotor->positionPid.ref = LMotor->positionSet;
-    RMotor->positionPid.ref = RMotor->positionSet;
+    // LMotor->positionPid.ref = LMotor->positionSet;
+    // RMotor->positionPid.ref = RMotor->positionSet;
 
-    LMotor->positionPid.fdb = LMotor->motorFeedback.positionFdb;
-    RMotor->positionPid.fdb = RMotor->motorFeedback.positionFdb;
+    // LMotor->positionPid.fdb = LMotor->motorFeedback.positionFdb;
+    // RMotor->positionPid.fdb = RMotor->motorFeedback.positionFdb;
 
 
-    // //再次对position ref限幅，用处不大
-    // if (LMotor->positionPid.ref - LMotor->positionPid.fdb >= Math::Pi)
-    // {
-    //     LMotor->positionPid.ref -= Math::PiX2;
-    // }
-    // else if (LMotor->positionPid.ref - LMotor->positionPid.fdb <= -Math::Pi)
-    // {
-    //     LMotor->positionPid.ref += Math::PiX2;
-    // }
 
-    LMotor->positionPid.UpdateResult();
-    RMotor->positionPid.UpdateResult();
+    // LMotor->positionPid.UpdateResult();
+    // RMotor->positionPid.UpdateResult();
 
-    // 内环控制，速度环控制
-    LMotor->speedPid.ref = LMotor->positionPid.result;
-    RMotor->speedPid.ref = RMotor->positionPid.result;
+    // // 内环控制，速度环控制
+    // LMotor->speedPid.ref = LMotor->positionPid.result;
+    // RMotor->speedPid.ref = RMotor->positionPid.result;
 
-    LMotor->speedPid.fdb = LMotor->motorFeedback.speedFdb;
-    RMotor->speedPid.fdb = RMotor->motorFeedback.speedFdb;
+    // LMotor->speedPid.fdb = LMotor->motorFeedback.speedFdb;
+    // RMotor->speedPid.fdb = RMotor->motorFeedback.speedFdb;
 
-    LMotor->speedPid.UpdateResult();
-    RMotor->speedPid.UpdateResult();
+    // LMotor->speedPid.UpdateResult();
+    // RMotor->speedPid.UpdateResult();
 
-    LMotor->currentSet = LMotor->speedPid.result; // 根据速度PID结果设置电流
-    RMotor->currentSet = RMotor->speedPid.result;
+    // LMotor->currentSet = LMotor->speedPid.result; // 根据速度PID结果设置电流
+    // RMotor->currentSet = RMotor->speedPid.result;
+
+    RD->positionPid.ref = RD->positionSet;
+    RD->positionPid.fdb = RD->motorFeedback.positionFdb;
+    RD->positionPid.UpdateResult();
+    RD->currentSet = RD->positionPid.result;
+
 }
 
 void BalanceRemoteControl::exit()

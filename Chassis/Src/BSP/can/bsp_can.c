@@ -80,10 +80,7 @@ extern void can_callback_cpp(CAN_HandleTypeDef *hcan);
  */
 void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)
 {
-    CAN_RxHeaderTypeDef rx_header;
-    // 接收数据
-    uint8_t rx_data[8];
-    HAL_CAN_GetRxMessage(hcan, CAN_RX_FIFO0, &rx_header, rx_data);
+
 
     // /*-------------------------------------------------大疆电机数据-------------------------------------------------*/
     // if (rx_header.StdId >= 0x201 && rx_header.StdId <= 0x208)

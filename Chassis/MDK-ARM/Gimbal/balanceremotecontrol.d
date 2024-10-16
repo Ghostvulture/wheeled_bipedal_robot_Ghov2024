@@ -64,10 +64,10 @@ gimbal/balanceremotecontrol.o: \
   ..\Src\Entity\Dr16\remoteControl.h ..\Src\Entity\GMMotor\GM6020.hpp \
   ..\Src\Entity\GMMotor\GM3508.hpp ..\Src\Entity\GMMotor\GM2006.hpp \
   ..\Src\Entity\LKMotor\LK9025.hpp ..\Src\Entity\LKMotor\LKMotor.hpp \
-  ..\Src\Entity\IMU\AHRS\AHRS.hpp ..\Src\Entity\IMU\BMI088\BMI088.hpp \
-  ..\Src\BSP\spi\bsp_spi.h ..\Src\BSP\dwt\bsp_dwt.h \
-  ..\Src\Entity\IMU\BMI088\BMI088reg.h ..\Src\BSP\pwm\bsp_pwm.h \
-  ..\Src\Entity\IMU\IST8310\IST8310.hpp ..\Src\BSP\iic\bsp_iic.h \
-  ..\Src\Entity\IMU\EKF\QuaternionEKF.h \
+  ..\Src\Entity\LKMotor\LK8016.hpp ..\Src\Entity\IMU\AHRS\AHRS.hpp \
+  ..\Src\Entity\IMU\BMI088\BMI088.hpp ..\Src\BSP\spi\bsp_spi.h \
+  ..\Src\BSP\dwt\bsp_dwt.h ..\Src\Entity\IMU\BMI088\BMI088reg.h \
+  ..\Src\BSP\pwm\bsp_pwm.h ..\Src\Entity\IMU\IST8310\IST8310.hpp \
+  ..\Src\BSP\iic\bsp_iic.h ..\Src\Entity\IMU\EKF\QuaternionEKF.h \
   ..\Src\Entity\IMU\EKF\kalman_filter.h ..\Src\Entity\IMU\EKF\user_lib.h \
   ..\Src\Utility\FirstOrderFilter.hpp

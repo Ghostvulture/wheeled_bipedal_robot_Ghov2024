@@ -83,6 +83,7 @@ gimbal/cpp_main.o: ..\Src\GimbalController\cpp_main.cpp \
   ..\Src\GimbalController\Test\BalanceController.hpp \
   ..\Src\Entity\LKMotor\LKMotorHandler.hpp \
   ..\Src\Entity\LKMotor\LKMotor.hpp ..\Src\Entity\LKMotor\LK9025.hpp \
+  ..\Src\Entity\LKMotor\LK8016.hpp \
   ..\Src\GimbalController\Test\BalanceSpeedControl.hpp \
   ..\Src\GimbalController\Test\BalanceStateRelax.hpp \
   ..\Src\GimbalController\Test\BalanceRemoteControl.hpp \

@@ -12,6 +12,7 @@
 #include "GM3508.hpp"
 #include "GM2006.hpp"
 #include "LK9025.hpp"
+#include "LK8016.hpp"
 
 #include "BalanceSpeedControl.hpp"
 #include "BalanceStateRelax.hpp"
@@ -69,6 +70,8 @@ public:
     LK9025 RMotor;
     LK9025 LMotor;
 
+    LK8016 RD;
+
 
     /**
      * @brief 云台状态枚举。
@@ -118,7 +121,7 @@ public:
      * 将电机实例传入不同的状态机。
      */
     BalanceController() : RelaxState(&LMotor,&RMotor),
-                         RemoteControlState(&LMotor,&RMotor),
+                         RemoteControlState(&LMotor,&RMotor, &RD),
                          SpeedState(&LMotor,&RMotor),
                          StandState(&LMotor,&RMotor)
     {

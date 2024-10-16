@@ -63,6 +63,7 @@ gimbal/balancecontroller.o: \
   ..\Src\BSP\usart\bsp_usart.h ..\Src\Entity\Dr16\remoteControl.h \
   ..\Src\Entity\GMMotor\GM6020.hpp ..\Src\Entity\GMMotor\GM3508.hpp \
   ..\Src\Entity\GMMotor\GM2006.hpp ..\Src\Entity\LKMotor\LK9025.hpp \
+  ..\Src\Entity\LKMotor\LK8016.hpp \
   ..\Src\GimbalController\Test\BalanceSpeedControl.hpp \
   ..\Src\GimbalController\StateMachine.hpp \
   ..\Src\Entity\IMU\AHRS\AHRS.hpp ..\Src\Entity\IMU\BMI088\BMI088.hpp \
