@@ -8,19 +8,19 @@ void BalanceRemoteControl::init()
     Motor_PositionSet = 0;
 
     /*---------------------------初始化PID---------------------------*/
-    LK9025SpeedPid.kp = 150.0f;
+    LK9025SpeedPid.kp = 50.0f;
     LK9025SpeedPid.ki = 0.0f;
-    LK9025SpeedPid.kd = 0.0f;
+    LK9025SpeedPid.kd = 5.0f;
     LK9025SpeedPid.maxIOut = 3;
     LK9025SpeedPid.maxOut = 15000;
 
-    LK9025PositionPid.kp = 150.0f;
+    LK9025PositionPid.kp = 50.0f;
     LK9025PositionPid.ki = 0.0f;
-    LK9025PositionPid.kd = 0.0f;
+    LK9025PositionPid.kd = 5.0f;
     LK9025PositionPid.maxIOut = 3;
     LK9025PositionPid.maxOut = 15000;
 
-    LK8016PositionPid.kp = 150.0f;
+    LK8016PositionPid.kp = 500.0f;
     LK8016PositionPid.ki = 0.0f;
     LK8016PositionPid.kd = 0.0f;
     LK8016PositionPid.maxIOut = 3;
@@ -39,11 +39,17 @@ void BalanceRemoteControl::init()
     RMotor->speedPid.Clear();
     RMotor->positionPid.Clear();
 
-    RD->controlMode = LK9025::POS_MODE; 
+    RD->controlMode = LK8016::POS_MODE; 
     RD->speedPid = LK8016PositionPid;
     RD->positionPid = LK8016PositionPid;
     RD->speedPid.Clear();
     RD->positionPid.Clear();
+
+    RU->controlMode = LK8016::POS_MODE; 
+    RU->speedPid = LK8016PositionPid;
+    RU->positionPid = LK8016PositionPid;
+    RU->speedPid.Clear();
+    RU->positionPid.Clear();
     
 
 
@@ -51,27 +57,21 @@ void BalanceRemoteControl::init()
 
     LMotor->controlMode = LK9025::RELAX_MODE;
     RMotor->controlMode = LK9025::RELAX_MODE;
-
+    RD->controlMode = LK8016::RELAX_MODE;
+    RU->controlMode = LK8016::RELAX_MODE;
     LMotor->setOutput();
     RMotor->setOutput();
     RD->setOutput();
+    RU->setOutput();
 
+    
 }
 
 void BalanceRemoteControl::enter()
 {
-    // 接受遥控器输入
-    Motor_PositionSet += Dr16::instance()->rc_left_x * 0.008f; 
-    //给遥控器赋值增加限幅，防止输出>=1.5Pi超出量程
-    if (Motor_PositionSet >= Math::Pi)
-    {
-        Motor_PositionSet -= Math::PiX2;
-    }
-    else if (Motor_PositionSet <= -Math::Pi)
-    {
-        Motor_PositionSet += Math::PiX2;
-    }
-		RD->positionSet = 0.43;
+
+    RD->positionSet = RU->positionSet =  0.43;
+    link_solver[0].Resolve(RD->motorFeedback.positionFdb, RU->motorFeedback.positionFdb);
 
 }
 
@@ -106,11 +106,15 @@ void BalanceRemoteControl::execute()
     // LMotor->currentSet = LMotor->speedPid.result; // 根据速度PID结果设置电流
     // RMotor->currentSet = RMotor->speedPid.result;
 
-    RD->positionPid.ref = RD->positionSet;
-    RD->positionPid.fdb = RD->motorFeedback.positionFdb;
-    RD->positionPid.UpdateResult();
-    RD->currentSet = RD->positionPid.result;
+    // RD->positionPid.ref = RD->positionSet;
+    // RD->positionPid.fdb = RD->motorFeedback.positionFdb;
+    // RD->positionPid.UpdateResult();
+    // RD->currentSet = RD->positionPid.result;
 
+    // RU->positionPid.ref = RD->positionSet;
+    // RU->positionPid.fdb = RD->motorFeedback.positionFdb;
+    // RU->positionPid.UpdateResult();
+    // RU->currentSet = RD->positionPid.result;
 }
 
 void BalanceRemoteControl::exit()

@@ -70,4 +70,6 @@ gimbal/balanceremotecontrol.o: \
   ..\Src\BSP\pwm\bsp_pwm.h ..\Src\Entity\IMU\IST8310\IST8310.hpp \
   ..\Src\BSP\iic\bsp_iic.h ..\Src\Entity\IMU\EKF\QuaternionEKF.h \
   ..\Src\Entity\IMU\EKF\kalman_filter.h ..\Src\Entity\IMU\EKF\user_lib.h \
-  ..\Src\Utility\FirstOrderFilter.hpp
+  ..\Src\Utility\FirstOrderFilter.hpp \
+  ..\Src\GimbalController\Test\balance_toolbox\balance_task.hpp \
+  ..\Src\GimbalController\Test\balance_toolbox\msgs.h

@@ -48,7 +48,7 @@ void BalanceStandControl::init()
     LK9025SpeedPid.maxIOut = 3;
     LK9025SpeedPid.maxOut = 15000;
     /*-----------------------------------------左右轮分别初始化-----------------------------------------*/
-    LMotor->controlMode = LK9025::POS_MODE; 
+    LMotor->controlMode = LK9025::TOR_MODE; 
     LMotor->anglePid = LK9025AnglePid;
     LMotor->omegaPid = LK9025OmegaPid;
     LMotor->positionPid = LK9025PositionPid;
@@ -58,7 +58,7 @@ void BalanceStandControl::init()
     LMotor->omegaPid.Clear();
 
 
-    RMotor->controlMode = LK9025::POS_MODE; 
+    RMotor->controlMode = LK9025::TOR_MODE; 
     RMotor->anglePid = LK9025AnglePid;
     RMotor->omegaPid = LK9025OmegaPid;
     RMotor->positionPid = LK9025PositionPid;
@@ -128,8 +128,11 @@ void BalanceStandControl::execute()
 
 
 
-    LMotor->currentSet = LMotor->anglePid.result + LMotor->omegaPid.result; //设置电流
-    RMotor->currentSet = - (RMotor->anglePid.result + RMotor->omegaPid.result); 
+    LMotor->torqueSet = LMotor->anglePid.result + LMotor->omegaPid.result; //设置电流
+    RMotor->torqueSet = - (RMotor->anglePid.result + RMotor->omegaPid.result); 
+
+    LMotor->setOutput();   
+    RMotor->setOutput();
 }
 
 void BalanceStandControl::exit()

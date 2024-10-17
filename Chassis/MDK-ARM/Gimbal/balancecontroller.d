@@ -76,6 +76,6 @@ gimbal/balancecontroller.o: \
   ..\Src\GimbalController\Test\BalanceRemoteControl.hpp \
   ..\Src\Entity\board_connectivity\BoardConnectivity.hpp \
   ..\Src\Utility\FirstOrderFilter.hpp \
-  ..\Src\GimbalController\Test\BalanceStandControl.hpp \
+  ..\Src\GimbalController\Test\balance_toolbox\balance_task.hpp \
   ..\Src\GimbalController\Test\balance_toolbox\msgs.h \
-  ..\Src\GimbalController\Test\balance_toolbox\balance_task.hpp
+  ..\Src\GimbalController\Test\BalanceStandControl.hpp

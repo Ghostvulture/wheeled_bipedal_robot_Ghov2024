@@ -64,6 +64,15 @@ void LK9025::setOutput()
         this->currentSet = 0.0; // 松开模式下电流设定为0
 				return;
     }
+    else if (this->controlMode == TOR_MODE)
+    {
+        // currentSet = torqueSet / 0.32f / 32.0f * 2000.0f;
+        this->currentSet = this->torqueSet * 392.78f;
+				this->currentSet = Math::FloatConstrain(currentSet, -2000, 2000);
+				return;
+				
+    } 
+    
     else if (this->controlMode == SPD_MODE)
     {
         // 内环控制，速度环控制

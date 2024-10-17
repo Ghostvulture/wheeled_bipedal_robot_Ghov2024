@@ -17,6 +17,7 @@
 #include "Math.hpp"
 #include "string.h"
 #include "FirstOrderFilter.hpp"
+#include "balance_task.hpp"
 
 /**
  * @class GimbalStateRelax
@@ -33,9 +34,11 @@ public:
      */
     BalanceRemoteControl(LK9025 *LMotor,
                          LK9025 *RMotor,
-                         LK8016 *RD) : LMotor(LMotor),
+                         LK8016 *RD,
+                         LK8016 *RU) : LMotor(LMotor),
                                        RMotor(RMotor),
-                                       RD(RD) {};
+                                       RD(RD),
+                                       RU(RU) {};
 
     /**
      * @brief 析构函数。
@@ -48,6 +51,10 @@ public:
     LK9025 *LMotor;
     LK9025 *RMotor;
     LK8016 *RD;
+    LK8016 *RU;
+
+    cLinkSolver link_solver[1];
+
 
     /**
      * @brief pid结构体。

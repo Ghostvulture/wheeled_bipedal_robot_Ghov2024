@@ -46,7 +46,8 @@ public:
         SPD_MODE,            ///< 速度模式，控制电机速度。
         POS_MODE,            ///< 位置模式，控制电机到特定位置。
         POS_FOR_NO_SPD_MODE, ///< 无速度反馈下的位置模式。
-        IMU_MODE             ///< IMU模式，使用IMU反馈进行控制。
+        IMU_MODE,            ///< IMU模式，使用IMU反馈进行控制。
+        TOR_MODE             ///< 转矩模式，控制电机的转矩。
     };
 
     /**

@@ -87,8 +87,8 @@ gimbal/cpp_main.o: ..\Src\GimbalController\cpp_main.cpp \
   ..\Src\GimbalController\Test\BalanceSpeedControl.hpp \
   ..\Src\GimbalController\Test\BalanceStateRelax.hpp \
   ..\Src\GimbalController\Test\BalanceRemoteControl.hpp \
-  ..\Src\GimbalController\Test\BalanceStandControl.hpp \
-  ..\Src\GimbalController\Test\balance_toolbox\msgs.h \
   ..\Src\GimbalController\Test\balance_toolbox\balance_task.hpp \
+  ..\Src\GimbalController\Test\balance_toolbox\msgs.h \
+  ..\Src\GimbalController\Test\BalanceStandControl.hpp \
   ..\Src\Entity\LED\LED.h ..\Src\BSP\gpio\bsp_gpio.h ..\Src\BSP\bsp.h \
   ..\Src\BSP\tim\bsp_tim.h ..\Src\GimbalController\cpp_main.hpp

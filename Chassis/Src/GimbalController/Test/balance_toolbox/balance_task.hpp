@@ -4,6 +4,8 @@
 
 #include "kalman_filter.h"
 #include "msgs.h"
+#include "cstdint"
+#include "arm_math.h"
 /*
  *@brief: 匀加速模型卡尔曼滤波器
 */
@@ -59,5 +61,64 @@ public:
 //待修改，自己实现的普通四元数计算函数
 void Quaternion_product_single_f32(const float32_t *qa, const float32_t *qb, float32_t *qr);
 void Quaternion_product_f32(const float32_t *qa, const float32_t *qb, float32_t *qr, uint32_t nbQuaternions);
+
+class cLinkSolver
+{
+    protected:
+
+        /*雅可比矩阵*/
+        float MTRTJ_mat[4]={0};
+	    float JTRM_mat[4]={0};
+	    float JTRMRev_mat[4]={0};
+
+        /*腿长，单位m*/
+        float L1 = 0.150f;
+        float L2 = 0.290f;
+        float MotorDistance = 0.150f;
+        float HalfMotorDistance = MotorDistance / 2.0f;
+
+        /*关节电机弧度*/
+        float phi1 = 0.0f;
+        float phi4 = 0.0f;
+
+        /*极限值*/
+        float phi1_max = PI;
+        float phi4_max = PI / 2;
+        float phi1_min = PI / 2;
+        float phi4_min = 0.0f;
+
+        /*倒立摆长度*/
+        float PendulumLength = 0.0f;
+        /*倒立摆角度*/
+        float PendulumRadian = PI/2;
+        /*倒立摆坐标*/
+        float CoorC[2]={0.0f,0.0f};
+        /*第二象限节点坐标*/
+        float CoorB[2]={0.0f,0.0f};
+        float U2 = 0.0f;
+        /*第二象限节点坐标*/
+        float CoorD[2]={0.0f,0.0f};
+        float U3 = 0.0f;
+
+
+    public:
+	void Resolve(float phi4_radian, float psi1_radian);
+	void VMCCal(float *F, float *T);
+	void VMCRevCal(float *F, float *T);
+    void VMCVelCal(float *phi_dot, float *phi0_dot_vt_dot);
+
+	inline float GetPendulumLen()
+	{return PendulumLength;}
+	
+	inline float GetPendulumRadian()
+	{return PendulumRadian;}
+	
+	inline void GetPendulumCoor(float* Coor) 
+	{Coor[0]=this->CoorC[0];Coor[1]=this->CoorC[1];}
+	inline void GetCoorB(float* Coor)
+	{Coor[0]=this->CoorB[0];Coor[1]=this->CoorB[1];}
+	inline void GetCoorD(float*Coor)
+	{Coor[0]=this->CoorD[0];Coor[1]=this->CoorD[1];}
+};
 
 #endif // BALANCE_TASK_HPP

@@ -71,6 +71,7 @@ public:
     LK9025 LMotor;
 
     LK8016 RD;
+    LK8016 RU;
 
 
     /**
@@ -121,7 +122,7 @@ public:
      * 将电机实例传入不同的状态机。
      */
     BalanceController() : RelaxState(&LMotor,&RMotor),
-                         RemoteControlState(&LMotor,&RMotor, &RD),
+                         RemoteControlState(&LMotor,&RMotor, &RD, &RU),
                          SpeedState(&LMotor,&RMotor),
                          StandState(&LMotor,&RMotor)
     {

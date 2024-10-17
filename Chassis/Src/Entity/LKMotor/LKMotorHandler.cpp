@@ -102,7 +102,7 @@ void LKMotorHandler::sendControlData(CAN_HandleTypeDef *hcan1, CAN_HandleTypeDef
             // 0x141-144，控制标识符为0x280
             if (LKMotorList[1][i]->canId >= 0x141 && LKMotorList[0][i]->canId <= 0x144)
             {
-                int index = (LKMotorList[0][i]->canId - 0x140) * 2;
+                int index = (LKMotorList[1][i]->canId - 0x140) * 2;
                 can2_send_data_0[index - 2] = LKMotorList[1][i]->currentSet;
                 can2_send_data_0[index - 1] = LKMotorList[1][i]->currentSet >> 8;
             }

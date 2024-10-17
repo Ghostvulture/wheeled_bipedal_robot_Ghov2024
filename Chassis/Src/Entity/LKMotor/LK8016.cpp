@@ -64,7 +64,7 @@ void LK8016::setOutput()
         this->currentSet = 0.0; // 松开模式下电流设定为0
 				return;
     }
-    else if (this->controlMode == POS_MODE)
+    else if (this->controlMode == TOR_MODE)
     {
         // currentSet = torqueSet / 0.32f / 32.0f * 2000.0f;
         this->currentSet = this->torqueSet * 392.78f;
