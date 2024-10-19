@@ -62,4 +62,5 @@ gimbal/balancestaterelax.o: \
   ..\Src\Entity\Dr16\Dr16.hpp ..\Src\BSP\usart\bsp_usart.h \
   ..\Src\Entity\Dr16\remoteControl.h ..\Src\Entity\GMMotor\GM6020.hpp \
   ..\Src\Entity\GMMotor\GM3508.hpp ..\Src\Entity\GMMotor\GM2006.hpp \
-  ..\Src\Entity\LKMotor\LK9025.hpp ..\Src\Entity\LKMotor\LKMotor.hpp
+  ..\Src\Entity\LKMotor\LK9025.hpp ..\Src\Entity\LKMotor\LKMotor.hpp \
+  ..\Src\Entity\LKMotor\LK8016.hpp

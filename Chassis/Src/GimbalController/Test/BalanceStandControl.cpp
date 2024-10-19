@@ -96,7 +96,7 @@ void BalanceStandControl::enter()
     kf_vel.UpdateKalman(vel_temp, a);
 
     odometer_msg.x = kf_vel.GetXhat();
-		odometer_msg.v = kf_vel.GetVhat();
+    odometer_msg.v = kf_vel.GetVhat();
     odometer_msg.a_z = a_world[3];
 
 //    VEL_KF = vel_temp;

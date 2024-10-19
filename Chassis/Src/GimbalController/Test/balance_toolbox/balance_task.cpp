@@ -1,5 +1,6 @@
 #include "balance_task.hpp"
 
+
 void Quaternion_product_single_f32(const float32_t *qa, const float32_t *qb, float32_t *qr)
 {
     qr[0] = qa[0] * qb[0] - qa[1] * qb[1] - qa[2] * qb[2] - qa[3] * qb[3];
@@ -92,7 +93,7 @@ void cLinkSolver::Resolve(float phi4_radian, float phi1_radian)
     MTRTJ_mat[3] = L1 * cos02 * sin34 / (sin32 * PendulumLength);
 }
 
-/*正向VMC 由Force Torque->T3 T2*/
+/*正向VMC 由Force Torque->T1 T2*/
 void cLinkSolver::VMCCal(float *FT, float *Tmotor) {
     Tmotor[0] = this->JTRM_mat[0] * FT[0] + this->JTRM_mat[1] * FT[1];
     Tmotor[1] = this->JTRM_mat[2] * FT[0] + this->JTRM_mat[3] * FT[1];

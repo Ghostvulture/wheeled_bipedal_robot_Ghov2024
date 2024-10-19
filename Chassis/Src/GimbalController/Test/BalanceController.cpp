@@ -21,6 +21,14 @@ void BalanceController::init()
     RU.setOutput();
     LKMotorHandler::instance()->registerMotor(&RU, &hcan2, 0x143); 
 
+    LD.controlMode = LK8016::RELAX_MODE;
+    LD.setOutput();
+    LKMotorHandler::instance()->registerMotor(&LD, &hcan2, 0x141); 
+
+    LU.controlMode = LK8016::RELAX_MODE;
+    LU.setOutput();
+    LKMotorHandler::instance()->registerMotor(&LU, &hcan2, 0x142); 
+
 }
 
 void BalanceController::run()

@@ -9,6 +9,7 @@
 #include "GM3508.hpp"
 #include "GM2006.hpp"
 #include "LK9025.hpp"
+#include "LK8016.hpp"
 
 /**
  * @class GimbalStateRelax
@@ -24,8 +25,16 @@ public:
      * @param PitchMotor 云台Pitch轴电机。
      */
     BalanceStateRelax(LK9025 *LMotor,
-                      LK9025 *RMotor) : LMotor(LMotor),
-                                        RMotor(RMotor) {};
+                         LK9025 *RMotor,
+                         LK8016 *RD,
+                         LK8016 *RU,
+                         LK8016 *LD,
+                         LK8016 *LU) : LMotor(LMotor),
+                                       RMotor(RMotor),
+                                       RD(RD),
+                                       RU(RU),
+                                       LD(LD),
+                                       LU(LU) {};
 
     /**
      * @brief 析构函数。
@@ -37,6 +46,10 @@ public:
      */
     LK9025 *LMotor;
     LK9025 *RMotor;
+    LK8016 *RD;
+    LK8016 *RU;
+    LK8016 *LD;
+    LK8016 *LU;
 
 
     /**

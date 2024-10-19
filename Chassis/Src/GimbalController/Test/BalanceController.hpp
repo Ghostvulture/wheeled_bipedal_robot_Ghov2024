@@ -73,6 +73,9 @@ public:
     LK8016 RD;
     LK8016 RU;
 
+    LK8016 LD;
+    LK8016 LU;
+
 
     /**
      * @brief 云台状态枚举。
@@ -121,8 +124,8 @@ public:
      * 默认模式是放松模式。
      * 将电机实例传入不同的状态机。
      */
-    BalanceController() : RelaxState(&LMotor,&RMotor),
-                         RemoteControlState(&LMotor,&RMotor, &RD, &RU),
+    BalanceController() : RelaxState(&LMotor,&RMotor, &RD, &RU, &LD, &LU),
+                         RemoteControlState(&LMotor,&RMotor, &RD, &RU, &LD, &LU),
                          SpeedState(&LMotor,&RMotor),
                          StandState(&LMotor,&RMotor)
     {

@@ -19,7 +19,7 @@
 
 #include "arm_math.h"
 
-#define WHEEL_RADIUS 0.095f
+
 
 /**
  * @class BalanceStandControl

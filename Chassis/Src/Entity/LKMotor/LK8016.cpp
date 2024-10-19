@@ -66,8 +66,8 @@ void LK8016::setOutput()
     }
     else if (this->controlMode == TOR_MODE)
     {
-        // currentSet = torqueSet / 0.32f / 32.0f * 2000.0f;
-        this->currentSet = this->torqueSet * 392.78f;
+        // currentSet = torqueSet / 2.9f / 32.0f * 2000.0f; 2.9：扭矩常数，32.0：电流常数，2000.0：电流输入最大值
+        this->currentSet = this->torqueSet * 21.5517f;
 				this->currentSet = Math::FloatConstrain(currentSet, -2000, 2000);
 				return;
 				

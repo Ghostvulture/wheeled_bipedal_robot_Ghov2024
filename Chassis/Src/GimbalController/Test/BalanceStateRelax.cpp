@@ -22,12 +22,22 @@ void BalanceStateRelax::enter()
     // 初始化放松状态
     LMotor->controlMode = LK9025::RELAX_MODE;
     RMotor->controlMode = LK9025::RELAX_MODE;
+    RD->controlMode = LK8016::RELAX_MODE;
+    RU->controlMode = LK8016::RELAX_MODE;
+    LD->controlMode = LK8016::RELAX_MODE;
+    LU->controlMode = LK8016::RELAX_MODE;
+
+
 }
 
 void BalanceStateRelax::execute()
 {
     LMotor->setOutput();
     RMotor->setOutput();
+    RD->setOutput();
+    RU->setOutput();
+    LD->setOutput();
+    LU->setOutput();
 }
 
 void BalanceStateRelax::exit()

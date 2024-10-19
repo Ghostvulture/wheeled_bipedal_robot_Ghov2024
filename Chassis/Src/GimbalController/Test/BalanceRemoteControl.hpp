@@ -35,10 +35,14 @@ public:
     BalanceRemoteControl(LK9025 *LMotor,
                          LK9025 *RMotor,
                          LK8016 *RD,
-                         LK8016 *RU) : LMotor(LMotor),
+                         LK8016 *RU,
+                         LK8016 *LD,
+                         LK8016 *LU) : LMotor(LMotor),
                                        RMotor(RMotor),
                                        RD(RD),
-                                       RU(RU) {};
+                                       RU(RU),
+                                       LD(LD),
+                                       LU(LU) {};
 
     /**
      * @brief 析构函数。
@@ -52,9 +56,25 @@ public:
     LK9025 *RMotor;
     LK8016 *RD;
     LK8016 *RU;
+    LK8016 *LD;
+    LK8016 *LU;
 
-    cLinkSolver link_solver[1];
+    Msg_Odometer_t odometer_msg;
+    cVelFusionKF kf_vel;
 
+    cLinkSolver link_solver[2];
+    TASK_CONTROL::cValUpdate cValUpdate[2];
+    TASK_CONTROL::LQR lqr;
+
+    float observed_x[6];
+    float target_x[6];
+    float lqr_out[2];
+
+    arm_matrix_instance_f32 mat_observed = {6, 1, observed_x};
+    arm_matrix_instance_f32 mat_target = {6, 1, target_x};
+
+    float force_torque_left[2];    
+    float force_torque_right[2];
 
     /**
      * @brief pid结构体。
@@ -62,6 +82,8 @@ public:
     Pid LK9025SpeedPid;///< 速度环PID
     Pid LK9025PositionPid;///< 位置环PID
     Pid LK8016PositionPid;///< 位置环PID
+
+    Pid legLengthPid;///< 腿长PID
 
     /**
      * @brief Yaw轴电机的位置或者速度设定。
